@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/homeToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/light_sea_blue"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/homeToolbar"
+                android:layout_above="@id/bottomNavView" />
+
+            <nl.joery.animatedbottombar.AnimatedBottomBar
+                android:id="@+id/bottomNavView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#f5f6fa"
+                app:abb_indicatorAppearance="round"
+                app:abb_indicatorHeight="4dp"
+                app:abb_indicatorMargin="16dp"
+                app:abb_selectedIndex="0"
+                app:abb_selectedTabType="text"
+                app:abb_tabs="@menu/tab_menu"
+                app:labelVisibilityMode="labeled" />
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/sidebarView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/nav_menu"
+            app:headerLayout="@layout/sidebar_header"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>

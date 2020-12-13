@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">IotProject</string>
+    <string name="homePage">主界面</string>
+    <string name="deviceInfPage">设备信息</string>
+    <string name="login_page">登录</string>
+    <string name="support_bluetooth">支持蓝牙</string>
+    <string name="is_turn_on">蓝牙状态</string>
+    <string name="turn_on">打开蓝牙</string>
+    <string name="turn_off">关闭蓝牙</string>
+    <string name="room_name">房间名称</string>
+    <string name="device_status">设备状态</string>
+    <string name="device_status_setting">设备状态设置</string>
+    <string name="window_angle_control">窗户角度控制</string>
+    <string name="Open">开启</string>
+    <string name="Close">关闭</string>
+    <string name="bluetooth">蓝牙</string>
+    <string name="test">测试</string>
+    <string name="bonded_bluetooth">已绑定设备</string>
+    <string name="available_device">可用设备</string>
+    <string name="available_bluetooth">可用蓝牙</string>
+    <string name="find">查找</string>
+    <string name="bluetooth_visibility">蓝牙可见性</string>
+    <string name="find_bluetooth">查找蓝牙</string>
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="sign_in">登录</string>
+    <string name="sign_up">注册</string>
+    <string name="smart_home">智能家</string>
+    <string name="temperature">温度</string>
+    <string name="air_quality">空气质量</string>
+    <string name="illumination">光照</string>
+    <string name="rain">雨水</string>
+    <string name="humidity">湿度</string>
+    <string name="environmental_quality_index">环境指数</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="equipment_management">设备管理</string>
+</resources>

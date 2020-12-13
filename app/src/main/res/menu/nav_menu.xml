@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navLocation"
+            android:icon="@drawable/nav_location_icon"
+            android:title="@string/location" />
+        <item
+            android:id="@+id/navMail"
+            android:icon="@drawable/nav_mail_icon"
+            android:title="@string/mail" />
+        <item
+            android:id="@+id/navExit"
+            android:icon="@drawable/nav_exit_icon"
+            android:title="@string/exit" />
+    </group>
+</menu>

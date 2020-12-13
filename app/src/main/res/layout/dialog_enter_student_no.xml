@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10sp">
+        <TextView
+            android:id="@+id/studentNoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/student_no"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+        <EditText
+            android:id="@+id/studentNoEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/studentNoTextView"
+            android:hint="@string/please_enter_student_no"
+            android:textSize="17sp"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:textColorHint="@color/black"
+            android:drawableBottom="@drawable/edit_text_blue_line"
+            android:background="@color/white"/>
+    </RelativeLayout>
+</layout>
