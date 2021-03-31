@@ -7,13 +7,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="#0A3180">
-        <Button
+        <com.gcode.gstylebutton.GStyleButton
             android:id="@+id/refresh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/refresh"
             android:layout_margin="5sp"
-            android:background="@drawable/button_white_gray_background"/>
+            app:button_shape="corner_rect_shape"
+            app:rounded_rect_corner_radius="10dp"
+            app:is_stroke="true"
+            app:style_background_color="@color/white"/>
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="50sp"

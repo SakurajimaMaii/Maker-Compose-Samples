@@ -7,7 +7,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.nfc.utils.ActivityCollectorUtils
+import com.gcode.gutils.ActivityCollectorUtils
 
 open class BaseActivity : AppCompatActivity() {
 

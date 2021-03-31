@@ -1,6 +1,5 @@
 package com.example.nfc.activity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -10,7 +9,6 @@ import com.example.nfc.R
 import com.example.nfc.adapter.BindingAdapterItem
 import com.example.nfc.adapter.DataBindingAdapter
 import com.example.nfc.databinding.ActivityCourseStatisticsBinding
-import com.example.nfc.utils.CommonUtils
 import com.example.nfc.viewModel.CourseStatisticsActivityViewModel
 
 class CourseStatisticsActivity : AppCompatActivity() {

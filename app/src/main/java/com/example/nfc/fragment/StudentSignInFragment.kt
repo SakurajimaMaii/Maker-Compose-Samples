@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.nfc.R
 import com.example.nfc.databinding.FragmentStudentSignInBinding
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.utils.CommonUtils
 import com.example.nfc.viewModel.StudentSignInFragmentViewModel
+import com.gcode.gutils.MsgWindowUtils
 
 class StudentSignInFragment : DialogFragment() {
 
@@ -50,12 +50,12 @@ class StudentSignInFragment : DialogFragment() {
             val result = Object.getOrNull()
             if(result != ""){
                 if (result=="TRUE"){
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"签到成功")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"签到成功")
                 }else{
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"签到失败")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"签到失败")
                 }
             }else{
-                CommonUtils.showShortMsg(ApplicationUtils.context,"签到失败")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context,"签到失败")
             }
         }
     }

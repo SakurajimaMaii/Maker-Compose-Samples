@@ -13,11 +13,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.nfc.R
 import com.example.nfc.databinding.ActivityStudentBinding
 import com.example.nfc.fragment.StudentSignInFragment
-import com.example.nfc.network.Repository
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.utils.CommonUtils
-import com.example.nfc.utils.DeviceInfUtils
 import com.example.nfc.viewModel.StudentActivityViewModel
+import com.gcode.gutils.ScreenSizeUtils
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartModel
 import com.github.aachartmodel.aainfographics.aachartcreator.AAChartType
 import com.github.aachartmodel.aainfographics.aachartcreator.AASeriesElement
@@ -27,7 +25,7 @@ class StudentActivity : AppCompatActivity() {
     private lateinit var binding :ActivityStudentBinding
 
     //获取屏幕宽度
-    private val screenWidth = DeviceInfUtils.getMobileScreenWidth(ApplicationUtils.context)
+    private val screenWidth = ScreenSizeUtils.getMobileScreenWidth(ApplicationUtils.context)
 
     private val viewModel by lazy {
         ViewModelProvider(this)[StudentActivityViewModel::class.java]

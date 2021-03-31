@@ -83,7 +83,6 @@
                 android:layout_weight="1"
                 android:text="@string/yes_en"
                 android:textSize="15sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/addNo"
@@ -93,7 +92,6 @@
                 android:layout_weight="1"
                 android:text="@string/no_en"
                 android:textSize="15sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
     </RelativeLayout>

@@ -4,7 +4,7 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.3"
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId "com.example.GClass"
@@ -49,51 +49,55 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'tech.gujin:toast-util:1.1.1'
-    implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.4'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     annotationProcessor 'com.android.databinding:compiler:4.0.1'
-    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.annotation:annotation:1.2.0'
     //底部导航栏
-    implementation 'nl.joery.animatedbottombar:library:1.0.8'
+    implementation 'nl.joery.animatedbottombar:library:1.0.9'
     //donut甜甜圈库
     implementation 'app.futured.donut:library:2.0.0'
     implementation 'app.futured.donut:library-compose:2.0.0'
     //天气
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //支持ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.0-beta01"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha01"
     //渐变色字体
     implementation 'com.williamyang:gradienttext:1.0.1'
     // 注意：分包之后不会有默认的Header和Footer需要手动添加！还是原来的三种方法！
-    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
-    implementation  'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
-    implementation  'com.scwang.smart:refresh-header-radar:2.0.1'       //雷达刷新头
+    implementation  'com.scwang.smart:refresh-layout-kernel:2.0.3'      //核心必须依赖
+    implementation  'com.scwang.smart:refresh-header-classics:2.0.3'    //经典刷新头
+    implementation  'com.scwang.smart:refresh-header-radar:2.0.3'       //雷达刷新头
     implementation  'com.scwang.smart:refresh-header-falsify:2.0.1'     //虚拟刷新头
     implementation  'com.scwang.smart:refresh-header-material:2.0.1'    //谷歌刷新头
     implementation  'com.scwang.smart:refresh-header-two-level:2.0.1'   //二级刷新头
     implementation  'com.scwang.smart:refresh-footer-ball:2.0.1'        //球脉冲加载
-    implementation  'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+    implementation  'com.scwang.smart:refresh-footer-classics:2.0.3'    //经典加载
     //EventBus
     implementation 'org.greenrobot:eventbus:3.2.0'
     implementation files('libs/mysql-connector-java-5.1.46-bin.jar')
     //NavigationView
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'com.google.android.material:material:1.3.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     //日期选择器
     implementation 'com.github.codbking:PickTime:v1.0.1'
+    //自定义Button
+    implementation 'com.github.SakurajimaMaii:GStyleButton:beta-1.1.1'
+    //自定义工具类
+    implementation 'com.github.SakurajimaMaii:GStyleUtils:alpha-1.0.0'
     //TransformationLayout
     implementation "com.github.skydoves:transformationlayout:1.0.6"
     // Testing Fragments in Isolation
-    debugImplementation "androidx.fragment:fragment-testing:1.2.5"
-    testImplementation 'junit:junit:4.13.1'
+    debugImplementation "androidx.fragment:fragment-testing:1.3.2"
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

@@ -11,8 +11,8 @@ import com.example.nfc.R
 import com.example.nfc.databinding.FragmentTeacherHomeBinding
 import com.example.nfc.model.MyClass
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.utils.CommonUtils
 import com.example.nfc.viewModel.TeacherHomeFragmentViewModel
+import com.gcode.gutils.MsgWindowUtils
 
 
 class TeacherHomeFragment:Fragment() {
@@ -54,7 +54,7 @@ class TeacherHomeFragment:Fragment() {
         viewModel.addClassResult.observe(viewLifecycleOwner){ Object->
             val result = Object.getOrNull()
             if (result=="TRUE"){
-                CommonUtils.showShortMsg(ApplicationUtils.context, "创建成功")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context, "创建成功")
             }
         }
 
@@ -65,9 +65,9 @@ class TeacherHomeFragment:Fragment() {
         viewModel.signInResult.observe(viewLifecycleOwner){ Object->
             val result = Object.getOrNull()
             if(result!=null){
-                CommonUtils.showShortMsg(ApplicationUtils.context, "正在上课")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context, "正在上课")
             }else{
-                CommonUtils.showShortMsg(ApplicationUtils.context, "操作失败")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context, "操作失败")
             }
         }
 
@@ -78,12 +78,12 @@ class TeacherHomeFragment:Fragment() {
         viewModel.signOutResult.observe(viewLifecycleOwner){ Object->
             val result = Object.getOrNull()
             if(result!=null){
-                CommonUtils.showShortMsg(ApplicationUtils.context, "下课")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context, "下课")
                 //设置上下课选项不可见，避免误操作
                 binding.beginClassCardView.visibility = View.GONE
                 binding.finishClassCardView.visibility = View.GONE
             }else{
-                CommonUtils.showShortMsg(ApplicationUtils.context, "操作失败")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context, "操作失败")
             }
         }
 

@@ -13,8 +13,8 @@ import com.example.nfc.activity.TeacherHomeActivity
 import com.example.nfc.databinding.FragmentTeacherLoginBinding
 import com.example.nfc.model.MyClass
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.utils.CommonUtils
 import com.example.nfc.viewModel.TeacherLoginFragmentViewModel
+import com.gcode.gutils.MsgWindowUtils
 
 class TeacherLoginFragment : DialogFragment() {
     private lateinit var binding: FragmentTeacherLoginBinding
@@ -56,14 +56,14 @@ class TeacherLoginFragment : DialogFragment() {
             val result = Object.getOrNull()
             if (result != null) {
                 if(result=="TRUE"){
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"登陆成功")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆成功")
                     val intent = Intent(ApplicationUtils.context,TeacherHomeActivity::class.java)
                     startActivity(intent)
                 }else{
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
                 }
             }else{
-                CommonUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
             }
         }
     }

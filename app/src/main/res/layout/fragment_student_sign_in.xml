@@ -105,7 +105,6 @@
                 android:layout_weight="1"
                 android:text="@string/check_in"
                 android:textSize="15sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/checkOut"
@@ -115,7 +114,6 @@
                 android:layout_weight="1"
                 android:text="@string/exit"
                 android:textSize="15sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
     </RelativeLayout>

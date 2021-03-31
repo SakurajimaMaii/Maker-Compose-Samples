@@ -91,7 +91,6 @@
                 android:text="@string/search_class_statistics"
                 android:drawableTop="@drawable/search_icon"
                 android:drawablePadding="10sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
             <Button
                 android:id="@+id/checkIn"
@@ -103,7 +102,6 @@
                 android:text="@string/check_in"
                 android:drawableTop="@drawable/check_in_icon"
                 android:drawablePadding="10sp"
-                android:background="@drawable/button_white_gray_background"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
         <androidx.cardview.widget.CardView

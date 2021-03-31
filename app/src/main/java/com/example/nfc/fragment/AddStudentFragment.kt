@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.nfc.R
 import com.example.nfc.databinding.FragmentAddStudentBinding
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.utils.CommonUtils
 import com.example.nfc.viewModel.AddStudentFragmentViewModel
+import com.gcode.gutils.MsgWindowUtils
 
 class AddStudentFragment : DialogFragment() {
     private lateinit var binding:FragmentAddStudentBinding
@@ -48,12 +48,12 @@ class AddStudentFragment : DialogFragment() {
             val result = Object.getOrNull()
             if(result!=null){
                 if(result.status=="TRUE"){
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"操作成功")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"操作成功")
                 }else{
-                    CommonUtils.showShortMsg(ApplicationUtils.context,"操作失败")
+                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"操作失败")
                 }
             }else{
-                CommonUtils.showShortMsg(ApplicationUtils.context,"操作失败")
+                MsgWindowUtils.showShortMsg(ApplicationUtils.context,"操作失败")
             }
         }
     }

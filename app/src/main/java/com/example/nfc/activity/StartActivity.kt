@@ -3,37 +3,28 @@ package com.example.nfc.activity
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
-import android.os.Build
 import android.os.Bundle
 import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.style.AbsoluteSizeSpan
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.nfc.R
 import com.example.nfc.adapter.BindingAdapterItem
+import com.example.nfc.adapter.DataBindingAdapter
+import com.example.nfc.databinding.ActivityStartBinding
 import com.example.nfc.fragment.TeacherLoginFragment
 import com.example.nfc.model.LoginModel
 import com.example.nfc.utils.ApplicationUtils
-import com.example.nfc.adapter.DataBindingAdapter
-import com.example.nfc.databinding.ActivityStartBinding
-import com.example.nfc.utils.CommonUtils
-import com.example.nfc.utils.DeviceInfUtils
 
 
 class StartActivity : AppCompatActivity() {
 
     private val loginModels:MutableList<BindingAdapterItem> = ArrayList()
-
-    //获取屏幕宽度和高度
-    private val screenWidth = DeviceInfUtils.getMobileScreenWidth(ApplicationUtils.context)
-    @RequiresApi(Build.VERSION_CODES.R)
-    private val screenHeight = DeviceInfUtils.getMobileScreenHeight(ApplicationUtils.context)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

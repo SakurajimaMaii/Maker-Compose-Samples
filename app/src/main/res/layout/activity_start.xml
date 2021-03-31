@@ -7,10 +7,6 @@
         android:layout_height="match_parent"
         android:background="#0A3180"
         tools:context=".activity.StartActivity">
-        <Button
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
         <LinearLayout
             android:id="@+id/titleLinearLayout"
             android:layout_width="match_parent"
