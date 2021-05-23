@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <shape>
+            <!-- 高度40 -->
+            <size android:height="10dp"/>
+            <!-- 圆角弧度 20 -->
+            <corners android:radius="10dp"/>
+            <!-- 变化率 -->
+            <gradient
+                android:endColor="#F7F8F9"
+                android:startColor="#F7F8F9" />
+            <stroke android:color="@color/dodgerblue" android:width="2dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <!-- 高度40 -->
+            <size android:height="10dp"/>
+            <!-- 圆角弧度 20 -->
+            <corners android:radius="10dp"/>
+            <!-- 变化率 -->
+            <gradient
+                android:endColor="#F7F8F9"
+                android:startColor="#F7F8F9" />
+        </shape>
+    </item>
+</selector>

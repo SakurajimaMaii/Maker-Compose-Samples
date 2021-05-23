@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <style type="text/css">
+        body, html, #allmap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://api.map.baidu.com/api?type=webgl&v=1.0&ak=ekMOTS0LGI8r1IdfIYyTPlNsFt2zMOQF"></script>
+    <title>校园视角2</title>
+</head>
+<body>
+<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMapGL.Map("allmap");
+    map.enableScrollWheelZoom(true);
+    var point = new BMapGL.Point(117.27838, 39.07737);
+    map.centerAndZoom(point, 20);
+
+    var marker = new BMapGL.Marker(point);  // 创建标注
+    map.addOverlay(marker);              // 将标注添加到地图中
+    var opts = {
+        width: 200,     // 信息窗口宽度
+        height: 100,     // 信息窗口高度
+        title: "双子楼", // 信息窗口标题
+        message: "双子楼",
+    }
+    var infoWindow = new BMapGL.InfoWindow("目前教室情况：\n A103(k) A104(k) A109(v) A110(v)", opts);  // 创建信息窗口对象
+    marker.addEventListener("click", function(){
+    	map.openInfoWindow(infoWindow, point); //开启信息窗口
+    });
+
+    window.onload = function (event) {
+        map.openInfoWindow(infoWindow, point); //开启信息窗口
+    };
+
+    map.setMapStyleV2({
+        styleId: 'fb26c084378114e061731e487524aebf'
+    });
+</script>

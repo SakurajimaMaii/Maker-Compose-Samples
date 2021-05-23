@@ -4,58 +4,61 @@
     <data>
         <variable
             name="item"
-            type="com.example.nfc.model.LoginModel" />
+            type="com.junction.jschool.model.LoginModel" />
     </data>
-    <FrameLayout
-        android:layout_width="270sp"
-        android:layout_height="450sp"
-        android:layout_margin="10sp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@{item.background}"
-            android:contentDescription="@string/test" />
-        <LinearLayout
-            android:layout_margin="20sp"
-            android:id="@+id/loginPage"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_margin="10dp">
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:minHeight="150dp">
             <ImageView
-                android:layout_marginTop="10sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@{item.imageId}"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@{item.background}"
                 android:contentDescription="@string/test"
-                android:layout_gravity="center_horizontal"/>
-            <com.gcode.gstylebutton.GStyleButton
-                android:id="@+id/sureButton"
-                android:layout_marginTop="10sp"
-                android:layout_marginBottom="10sp"
-                android:layout_width="120sp"
+                android:layout_gravity="center_vertical"/>
+            <LinearLayout
+                android:layout_margin="10sp"
+                android:id="@+id/loginPage"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/click_to_enter"
-                android:textSize="15sp"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                app:button_shape="corner_rect_shape"
-                app:rounded_rect_corner_radius="30dp"
-                app:is_solid="true"
-                app:style_background_color="#006BFF" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10sp"
-                android:text="@{item.title}"
-                android:layout_gravity="center_horizontal"/>
-            <TextView
-                android:layout_marginStart="30sp"
-                android:layout_marginEnd="30sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@{item.subTitle}"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"/>
-        </LinearLayout>
-    </FrameLayout>
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@{item.imageId}"
+                    android:contentDescription="@string/test"
+                    android:layout_gravity="center_vertical"/>
+                <LinearLayout
+                    android:layout_margin="5dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
+                    <TextView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10sp"
+                        android:text="@{item.title}"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
+                    <TextView
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{item.subTitle}"
+                        android:textSize="15sp"
+                        android:textColor="@color/white"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
 </layout>

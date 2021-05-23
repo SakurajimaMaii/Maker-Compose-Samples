@@ -22,14 +22,15 @@
                 android:id="@+id/titleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="G Class"
+                android:text="jSchool"
                 android:textColor="@color/white"
-                android:textSize="17sp" />
+                android:textSize="25sp"
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/subTitleTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="重新定义你的上课方式"
+                android:text="重新定义你的校园生活"
                 android:textColor="@color/white"
                 android:textSize="25sp"
                 android:textStyle="bold" />

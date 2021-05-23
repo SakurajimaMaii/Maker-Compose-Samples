@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragment.DataFragment"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/dark_sea_blue">
+            <Button
+                android:id="@+id/classBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/class_status"
+                android:textColor="@color/white"
+                android:background="@drawable/button_blue_background"
+                android:layout_margin="5dp"/>
+            <Button
+                android:id="@+id/personBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/person_status"
+                android:textColor="@color/black"
+                android:background="@drawable/button_white_background"
+                android:layout_margin="5dp"/>
+        </LinearLayout>
+        <com.junction.jschool.component.NoScrollViewPager
+            android:id="@+id/dataVp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!--            <TextView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@string/person_inf"-->
+        <!--                style="@style/CustomizePageTitle"/>-->
+
+        <!--            <WebView-->
+        <!--                android:id="@+id/personWebView"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="600dp"/>-->
+
+    </LinearLayout>
+</layout>

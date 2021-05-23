@@ -6,9 +6,9 @@
             android:icon="@drawable/nav_location_icon"
             android:title="@string/location" />
         <item
-            android:id="@+id/navMail"
-            android:icon="@drawable/nav_mail_icon"
-            android:title="@string/mail" />
+            android:id="@+id/navForum"
+            android:icon="@drawable/ic_forum"
+            android:title="@string/forum" />
         <item
             android:id="@+id/navExit"
             android:icon="@drawable/nav_exit_icon"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">G课堂</string>
+    <string name="app_name">jSchool</string>
     <string name="test">测试</string>
     <string name="location">定位</string>
     <string name="exit">退出</string>
@@ -38,9 +38,7 @@
     <string name="click_to_enter">点击进入</string>
     <string name="teacher_login">教师登录</string>
     <string name="class_no">课程号</string>
-    <string name="please_enter_class_no">请输入课程序号</string>
     <string name="teacher_no">教师号</string>
-    <string name="please_enter_teacher_no">请输入教师号</string>
     <string name="begin_class">上课</string>
     <string name="finish_class_icon">下课图标</string>
     <string name="finish_class">下课</string>
@@ -53,13 +51,11 @@
     <string name="course_no">补签节次</string>
     <string name="please_enter_reissue_class_no">请输入补签第几次课</string>
     <string name="stu_no">学生学号</string>
-    <string name="please_enter_student_no">请输入学生学号</string>
     <string name="yes_en">yes</string>
     <string name="no_en">no</string>
-    <string name="teacher_reissue">教师补签</string>
-    <string name="please_enter_student_name">请输入学生姓名</string>
-    <string name="student_name">学生姓名</string>
-    <string name="student_no">学号</string>
+    <string name="lost_name">失物名</string>
+    <string name="lost_description">失物描述</string>
+    <string name="lost_tag">失物标签</string>
     <string name="check_in">签到</string>
     <string name="check_out">未签到次数</string>
     <string name="search_class_statistics">查询上课统计情况</string>
@@ -73,9 +69,29 @@
     <string name="mail">邮件</string>
     <string name="home">主页</string>
     <string name="password">密码</string>
-    <string name="user_information">用户信息</string>
+    <string name="class_inf">教室占用情况</string>
     <string name="sign_in">登录</string>
     <string name="refresh">刷新</string>
     <string name="title_background_picture">标题背景图片</string>
     <string name="welcome_en">Welcome!</string>
+    <string name="username">用户名</string>
+    <string name="sign_up">注册用户</string>
+    <string name="forum">论坛</string>
+    <string name="release">发布</string>
+    <string name="data">数据</string>
+    <string name="post_a_post">发布帖子</string>
+    <string name="please_enter_your_post">说点什么吧</string>
+    <string name="now_is_finding">在寻失物</string>
+    <string name="add_find_notice">发布失物信息</string>
+    <string name="please_enter_lost_name">请输入失物名</string>
+    <string name="please_enter_lost_description">请输入失物描述</string>
+    <string name="welcome">欢迎,</string>
+    <string name="sports_competition">体育比赛</string>
+    <string name="leader_board">排行榜</string>
+    <string name="answer_contest">答题竞赛</string>
+    <string name="multiplayer_pk">多人pk</string>
+    <string name="join_en">join</string>
+    <string name="person_inf">人流情况</string>
+    <string name="class_status">教室情况</string>
+    <string name="person_status">人流情况</string>
 </resources>

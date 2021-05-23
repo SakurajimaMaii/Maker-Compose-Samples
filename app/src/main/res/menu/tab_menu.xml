@@ -4,9 +4,16 @@
         android:id="@+id/tab_one"
         android:icon="@drawable/home_icon"
         android:title="@string/home"/>
-
-<!--    <item-->
-<!--        android:id="@+id/tab_three"-->
-<!--        android:icon="@drawable/setting_icon"-->
-<!--        android:title="@string/setting"/>-->
+    <item
+        android:id="@+id/navForum"
+        android:icon="@drawable/ic_forum"
+        android:title="@string/forum" />
+    <item
+        android:id="@+id/navRelease"
+        android:icon="@drawable/ic_release"
+        android:title="@string/release" />
+    <item
+        android:id="@+id/navData"
+        android:icon="@drawable/ic_data"
+        android:title="@string/data" />
 </menu>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/loginRootLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"/>
+
+        <androidx.cardview.widget.CardView
+            style="@style/SignPageCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/titleLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables"
+                    android:layout_marginBottom="40sp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/test"
+                        android:src="@drawable/teacher_login_icon" />
+
+                    <TextView
+                        android:id="@+id/loginTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/gray"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tchNoTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/username"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/tchNoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:autofillHints="@string/test"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableStart="@drawable/user_icon"
+                    android:drawablePadding="5sp"
+                    android:hint="@string/please_enter_username"
+                    android:inputType="text"
+                    android:padding="10sp"
+                    android:gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/passwordTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/password"
+                    android:textColor="@color/gray"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:autofillHints="@string/test"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableStart="@drawable/password_icon"
+                    android:drawablePadding="5sp"
+                    android:hint="@string/please_enter_password"
+                    android:inputType="textPassword"
+                    android:padding="10sp"
+                    android:gravity="center_vertical"/>
+
+                <com.gcode.gstylebutton.GStyleButton
+                    android:id="@+id/signIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="@string/sign_in"
+                    android:textSize="15sp"
+                    android:textColor="@color/white"
+                    app:button_shape="rounded_rect_shape"
+                    app:rounded_rect_corner_radius="10dp"
+                    app:normal_bg_color="@color/dark_sea_blue"
+                    app:pressed_bg_color="#1A1e90ff"/>
+
+                <TextView
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up"
+                    android:textSize="15sp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginBottom="15sp"
+                    android:layout_gravity="center_horizontal"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
