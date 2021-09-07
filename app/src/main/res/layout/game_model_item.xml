@@ -5,7 +5,7 @@
     <data>
         <variable
             name="game"
-            type="com.junction.jschool.model.GameModel" />
+            type="com.gcode.imaker.ui.model.GameModel" />
     </data>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -46,32 +46,6 @@
                     android:text="@{game.description}"
                     android:textColor="@color/black"
                     android:textSize="12sp" />
-                <!--            <com.hedgehog.ratingbar.RatingBar-->
-                <!--                android:id="@+id/ratingbar"-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_gravity="center"-->
-                <!--                android:layout_marginTop="50dp"-->
-                <!--                hedgehog:clickable="true"-->
-                <!--                hedgehog:halfstart="true"-->
-                <!--                hedgehog:starCount="@{game.star}"-->
-                <!--                hedgehog:starEmpty="@mipmap/star_empty"-->
-                <!--                hedgehog:starFill="@mipmap/star_full"-->
-                <!--                hedgehog:starHalf="@mipmap/star_half"-->
-                <!--                hedgehog:starImageHeight="35dp"-->
-                <!--                hedgehog:starImageWidth="35dp"-->
-                <!--                hedgehog:starImagePadding="10dp"-->
-                <!--                android:focusable="true" />-->
-                <!--            <com.gcode.gstylebutton.GStyleButton-->
-                <!--                android:layout_width="wrap_content"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                android:layout_marginEnd="10dp"-->
-                <!--                app:button_shape="rounded_rect_shape"-->
-                <!--                app:rounded_rect_corner_radius="30dp"-->
-                <!--                android:text="@string/join_en"-->
-                <!--                android:textColor="@color/white"-->
-                <!--                app:normal_bg_color="@color/dark_sea_blue"-->
-                <!--                android:layout_gravity="end"/>-->
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

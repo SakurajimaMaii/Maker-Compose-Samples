@@ -97,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-                <com.gcode.gstylebutton.GStyleButton
+                <com.gcode.widget.ShapeButton
                     android:id="@+id/addYes"
                     android:layout_marginEnd="5sp"
                     android:layout_width="0dp"
@@ -106,10 +106,10 @@
                     android:text="@string/yes_hans"
                     android:textSize="15sp"
                     app:button_shape="rounded_rect_shape"
-                    app:rounded_rect_corner_radius="5dp"
-                    app:normal_bg_color="@color/white"
+                    app:button_rounded_rect_corner_radius="5dp"
+                    app:button_normal_bg_color="@color/white"
                     tools:ignore="ButtonStyle" />
-                <com.gcode.gstylebutton.GStyleButton
+                <com.gcode.widget.ShapeButton
                     android:id="@+id/addNo"
                     android:layout_marginStart="5sp"
                     android:layout_width="0dp"
@@ -118,8 +118,8 @@
                     android:text="@string/no_hans"
                     android:textSize="15sp"
                     app:button_shape="rounded_rect_shape"
-                    app:rounded_rect_corner_radius="5dp"
-                    app:normal_bg_color="@color/white"
+                    app:button_rounded_rect_corner_radius="5dp"
+                    app:button_normal_bg_color="@color/white"
                     tools:ignore="ButtonStyle" />
             </LinearLayout>
         </LinearLayout>

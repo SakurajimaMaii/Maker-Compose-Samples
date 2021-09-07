@@ -72,7 +72,7 @@
                     android:autofillHints="@string/please_enter_your_post"
                     android:inputType="text"
                     tools:ignore="LabelFor" />
-                <com.gcode.gstylebutton.GStyleButton
+                <com.gcode.widget.ShapeButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
@@ -81,8 +81,8 @@
                     android:text="@string/release"
                     android:textSize="15sp"
                     app:button_shape="rounded_rect_shape"
-                    app:normal_bg_color="@color/white"
-                    app:rounded_rect_corner_radius="2dp"/>
+                    app:button_normal_bg_color="@color/white"
+                    app:button_rounded_rect_corner_radius="2dp"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </FrameLayout>

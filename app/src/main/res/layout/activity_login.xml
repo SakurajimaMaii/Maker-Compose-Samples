@@ -98,7 +98,7 @@
                     android:padding="10sp"
                     android:gravity="center_vertical"/>
 
-                <com.gcode.gstylebutton.GStyleButton
+                <com.gcode.widget.ShapeButton
                     android:id="@+id/signIn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -106,10 +106,11 @@
                     android:text="@string/sign_in"
                     android:textSize="15sp"
                     android:textColor="@color/white"
-                    app:button_shape="rounded_rect_shape"
-                    app:rounded_rect_corner_radius="10dp"
-                    app:normal_bg_color="@color/dark_sea_blue"
-                    app:pressed_bg_color="#1A1e90ff"/>
+                    app:button_is_solid="true"
+                    app:button_shape="oval_shape"
+                    app:button_oval_radius="100dp"
+                    app:button_normal_bg_color="@color/dark_sea_blue"
+                    app:button_pressed_bg_color="#1A1e90ff"/>
 
                 <TextView
                     android:id="@+id/register"

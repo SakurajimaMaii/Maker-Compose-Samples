@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/dark_sea_blue"
-        tools:context=".fragment.PersonFragment">
+        tools:context=".ui.fragment.PersonFragment">
 
         <TextView
             android:layout_width="match_parent"
