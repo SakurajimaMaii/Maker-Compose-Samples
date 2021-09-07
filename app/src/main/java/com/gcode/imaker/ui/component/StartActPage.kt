@@ -44,8 +44,8 @@ fun BaseSignButton(
     Button(
         onClick = click,
         modifier = Modifier
-            .height(IntrinsicSize.Min)
-            .fillMaxWidth().padding(10.dp,0.dp,10.dp,10.dp),
+            .height(60.dp)
+            .fillMaxWidth().padding(15.dp,0.dp,15.dp,10.dp),
         shape = RoundedCornerShape(10.dp),
         colors = ButtonDefaults.buttonColors(backgroundColor = buttonColor,contentColor = textColor)
     ) {
@@ -58,14 +58,18 @@ fun BaseSignButton(
 
 
 @Composable
-fun SignInButton(click: () -> Unit){
+fun SignInButton(normalTextColor: Color = Color.White,
+                 pressedTextColor: Color = Color.White,
+                 normaBtnColor: Color = Color(0xFF3498db),
+                 pressedBtnColor: Color = Color(0xFF2980b9),
+                 click: () -> Unit){
     BaseSignButton(
         normalText = "登录",
         pressedText = "登录",
-        normalTextColor = Color.White,
-        pressedTextColor = Color.White,
-        normaBtnColor = Color(0xFF3498db),
-        pressedBtnColor = Color(0xFF2980b9),
+        normalTextColor = normalTextColor,
+        pressedTextColor = pressedTextColor,
+        normaBtnColor = normaBtnColor,
+        pressedBtnColor = pressedBtnColor,
         click = click
     )
 }

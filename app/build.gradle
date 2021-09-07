@@ -40,6 +40,7 @@ android {
     buildFeatures {
         // Enables Jetpack Compose for this module
         compose true
+        viewBinding true
     }
 
     composeOptions {
@@ -62,6 +63,8 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
     annotationProcessor 'com.android.databinding:compiler:4.0.1'
     implementation 'androidx.annotation:annotation:1.2.0'
     //底部导航栏
@@ -109,6 +112,10 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
     // 相对约束布局
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
+
+    implementation "com.google.accompanist:accompanist-insets:0.17.0"
+    implementation "com.google.accompanist:accompanist-insets-ui:0.17.0"
+    implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.2'
 }

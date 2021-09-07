@@ -1,8 +1,8 @@
 <resources>
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">@color/dark_sea_blue</item>
-        <item name="colorPrimaryDark">@color/dark_sea_blue</item>
+        <item name="colorPrimary">#D9FFD6</item>
+        <item name="colorPrimaryDark">#D9FFD6</item>
     </style>
     <style name="CustomizeTitle">
         <item name="android:textColor">@color/dark_sea_blue</item>
