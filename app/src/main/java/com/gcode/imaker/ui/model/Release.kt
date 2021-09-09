@@ -60,63 +60,72 @@ val releases = listOf(Release.Competition,Release.Member,Release.Mission,Release
  */
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ReleaseItem(release: Release, navController: NavController, clickEvent: () -> Unit) {
-    Surface(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable(onClick = clickEvent),
-        shape = RoundedCornerShape(30.dp, 0.dp, 0.dp, 0.dp)
-    ) {
-        Row(
+fun ReleaseItem(index:Int ,release: Release, navController: NavController, clickEvent: () -> Unit) {
+
+    Row {
+        if (index % 2 != 0){
+            Spacer(modifier = Modifier.width(40.dp))
+        }
+
+        Surface(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(IntrinsicSize.Min)
-                .background(brush = releaseLayoutBk(navController)),
-            verticalAlignment = Alignment.CenterVertically
+                .clickable(
+                    onClick = clickEvent
+                ),
+            shape = RoundedCornerShape(30.dp, 0.dp, 0.dp, 0.dp)
         ) {
-            Image(
-                painter = rememberCoilPainter(request = release.drawableUrl),
-                contentDescription = null,
+            Row(
                 modifier = Modifier
-                    .width(80.dp)
-                    .width(80.dp),
-            )
-            ConstraintLayout(
-                modifier = Modifier
-                    .padding(10.dp, 5.dp)
-                    .height(90.dp)
+                    .fillMaxWidth()
+                    .height(IntrinsicSize.Min)
+                    .background(brush = releaseLayoutBk(navController.context)),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-
-                val (title, subTitle, icon) = createRefs()
-
-                Text(
-                    text = release.title,
-                    fontSize = 18.sp,
-                    modifier = Modifier.constrainAs(title) {
-                        top.linkTo(parent.top)
-                        absoluteLeft.linkTo(parent.absoluteLeft)
-                    },
-                    fontWeight = FontWeight.Bold
-                )
-                Text(
-                    text = "了解更多",
-                    fontSize = 12.sp,
-                    modifier = Modifier.constrainAs(subTitle) {
-                        top.linkTo(title.bottom, margin = 25.dp)
-                        bottom.linkTo(parent.bottom)
-                        absoluteLeft.linkTo(parent.absoluteLeft)
-                    },
-                    fontWeight = FontWeight.Bold
-                )
                 Image(
-                    painter = painterResource(id = R.drawable.ic_link),
+                    painter = rememberCoilPainter(request = release.drawableUrl),
                     contentDescription = null,
-                    modifier = Modifier.constrainAs(icon) {
-                        top.linkTo(subTitle.top)
-                        absoluteLeft.linkTo(subTitle.absoluteRight)
-                        bottom.linkTo(subTitle.bottom)
-                    }
+                    modifier = Modifier
+                        .width(80.dp)
+                        .width(80.dp),
                 )
+                ConstraintLayout(
+                    modifier = Modifier
+                        .padding(10.dp, 5.dp)
+                        .height(90.dp)
+                ) {
+
+                    val (title, subTitle, icon) = createRefs()
+
+                    Text(
+                        text = release.title,
+                        fontSize = 18.sp,
+                        modifier = Modifier.constrainAs(title) {
+                            top.linkTo(parent.top)
+                            absoluteLeft.linkTo(parent.absoluteLeft)
+                        },
+                        fontWeight = FontWeight.Bold
+                    )
+                    Text(
+                        text = "了解更多",
+                        fontSize = 12.sp,
+                        modifier = Modifier.constrainAs(subTitle) {
+                            top.linkTo(title.bottom, margin = 25.dp)
+                            bottom.linkTo(parent.bottom)
+                            absoluteLeft.linkTo(parent.absoluteLeft)
+                        },
+                        fontWeight = FontWeight.Bold
+                    )
+                    Image(
+                        painter = painterResource(id = R.drawable.ic_link),
+                        contentDescription = null,
+                        modifier = Modifier.constrainAs(icon) {
+                            top.linkTo(subTitle.top)
+                            absoluteLeft.linkTo(subTitle.absoluteRight)
+                            bottom.linkTo(subTitle.bottom)
+                        }
+                    )
+                }
             }
         }
     }

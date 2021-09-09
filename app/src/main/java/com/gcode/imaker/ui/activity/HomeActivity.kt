@@ -1,11 +1,11 @@
 package com.gcode.imaker.ui.activity
 
-import android.content.Context
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,24 +19,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.gcode.imaker.R
-import com.gcode.imaker.ui.component.userNameOutlinedTextField
-import com.gcode.imaker.ui.fragment.DataFragment
+import com.gcode.imaker.ui.HomeActNavGraph
 import com.gcode.imaker.ui.fragment.ForumFragment
-import com.gcode.imaker.ui.fragment.HomeFragment
 import com.gcode.imaker.ui.fragment.ReleaseFragment
 import com.gcode.imaker.ui.model.releases
-import com.gcode.imaker.ui.theme.bkMain
-import com.gcode.imaker.utils.ApplicationUtils
-import com.gcode.tools.utils.MsgWindowUtils
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.navigationBarsPadding
 import com.google.accompanist.insets.statusBarsHeight
@@ -44,22 +39,24 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class HomeActivity : AppCompatActivity() {
 
+    @ExperimentalAnimationApi
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         WindowCompat.setDecorFitsSystemWindows(window,false)
 
         setContent {
-            HomeApp(this)
+            HomeApp()
         }
     }
 }
 
+@ExperimentalAnimationApi
 @Composable
-fun HomeApp(context: Context){
+fun HomeApp() {
 
     val list_cursor = listOf(
-        BottomNavCursor.Home,BottomNavCursor.Forum,BottomNavCursor.Release,BottomNavCursor.Data
+        BottomNavCursor.Home,BottomNavCursor.Forum,BottomNavCursor.Release,BottomNavCursor.About
     )
 
     // 记住选中tab位置
@@ -136,27 +133,14 @@ fun HomeApp(context: Context){
             }
         )
         {
-            Column(modifier = Modifier.background(Color(217,255,214)).fillMaxSize()) {
+            Column(modifier = Modifier
+                .background(Color(217, 255, 214))
+                .fillMaxSize()) {
                 Spacer(modifier = Modifier
                     .statusBarsHeight()
                     .fillMaxWidth())
 
-                NavHost(navController = navController, startDestination = Screen.Home.route){
-                    // 首页
-                    composable(Screen.Home.route) {
-
-                    }
-                    // 论坛
-                    composable(Screen.Forum.route) {
-                        ForumFragment()
-                    }
-                    // 发布
-                    composable(Screen.Release.route) {
-                        ReleaseFragment(releases,navController)
-                    }
-                    // 数据
-                    composable(Screen.Data.route) { DataFragment() }
-                }
+                HomeActNavGraph(navController = navController, startDestination = Screen.Home.route)
             }
         }
     }
@@ -172,14 +156,14 @@ sealed class Screen(val route: String, @StringRes val resourceId: Int) {
     object Home : Screen("home", R.string.home)
     object Forum : Screen("forum", R.string.forum)
     object Release: Screen("release", R.string.release)
-    object Data: Screen("data", R.string.data)
+    object About: Screen("about", R.string.about)
 }
 
 val items = listOf(
     Screen.Home,
     Screen.Forum,
     Screen.Release,
-    Screen.Data
+    Screen.About
 )
 
 enum class BottomNavCursor(
@@ -189,5 +173,5 @@ enum class BottomNavCursor(
     Home(R.string.home,R.drawable.ic_home),
     Forum(R.string.forum, R.drawable.ic_forum),
     Release(R.string.release, R.drawable.ic_release),
-    Data(R.string.data, R.drawable.ic_data)
+    About(R.string.about, R.drawable.ic_about)
 }

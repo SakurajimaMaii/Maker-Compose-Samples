@@ -1,29 +1,104 @@
 package com.gcode.imaker.ui.fragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.material.ExtendedFloatingActionButton
+import androidx.compose.material.Text
+import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import com.gcode.imaker.ui.component.StaggeredGrid
+import com.gcode.imaker.ui.model.ForumTag
+import com.gcode.imaker.ui.model.ForumTagItem
+import com.gcode.imaker.ui.model.forumTags
+import com.gcode.imaker.ui.theme.XiangSuFamily
+import androidx.compose.material.FloatingActionButton
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.res.painterResource
+import androidx.constraintlayout.compose.ConstraintLayout
 import com.gcode.imaker.R
-import com.gcode.imaker.databinding.FragmentForumBinding
+import com.gcode.imaker.ui.model.ForumTagTextItem
 
-class ForumFragment : Fragment() {
+@ExperimentalAnimationApi
+@Composable
+fun ForumFragment(navHostController: NavHostController) {
 
-    private lateinit var binding:FragmentForumBinding
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_forum, container, false)
-
-        return binding.root
+    var tagVisible by remember {
+        mutableStateOf(false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    Column(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(modifier = Modifier.fillMaxSize()) {
+            Text(
+                text = "选择你感兴趣的话题",
+                color = Color.Black,
+                fontWeight = FontWeight.Light,
+                fontSize = 30.sp,
+                modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 0.dp),
+                fontFamily = XiangSuFamily
+            )
+
+            ForumTags(forumTags = forumTags)
+        }
+
+        ConstraintLayout(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        ){
+
+            val (fab) = createRefs()
+
+            FloatingActionButton(
+                onClick = {
+                    tagVisible = !tagVisible
+                },
+                modifier = Modifier
+                    .wrapContentSize(Alignment.BottomEnd)
+                    .constrainAs(fab) {
+                        end.linkTo(parent.end, margin = 20.dp)
+                        bottom.linkTo(parent.bottom, margin = 80.dp)
+                    }
+            ){
+                Image(
+                    painter = painterResource(id = R.drawable.ic_search),
+                    contentDescription = null
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun ForumTags(forumTags:List<ForumTag>){
+//    StaggeredGrid(
+//        modifier = Modifier
+//            .horizontalScroll(rememberScrollState())
+//            .padding(horizontal = 20.dp, vertical = 10.dp)
+//    ) {
+//        forumTags.forEach { forumTag ->
+//            ForumTagItem(forumTag = forumTag)
+//        }
+//    }
+
+    LazyColumn(
+        modifier = Modifier.fillMaxSize().padding(horizontal = 20.dp, vertical = 10.dp)
+    ){
+        items(forumTags){ item->
+             ForumTagTextItem(forumTag = item)
+        }
     }
 }

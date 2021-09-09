@@ -1,8 +1,10 @@
 package com.gcode.imaker.ui.model
 
+import android.text.Layout
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
@@ -19,6 +21,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gcode.imaker.R
@@ -61,14 +64,6 @@ val findNotices = listOf(
             add("操场")
         },
         R.drawable.bag
-    ), FindNotice(
-        "学生卡",
-        "丢了了一张学生卡,学号19104565,还请捡到的小伙伴联系我",
-        ArrayList<String>().apply {
-            add("经管学院")
-            add("19级")
-        },
-        R.drawable.lost
     ),
     FindNotice(
         "耳机",
@@ -130,14 +125,24 @@ fun FindNoticeItem(findNotice: FindNotice){
                 }
             }
 
-            Row(verticalAlignment = Alignment.CenterVertically,modifier = Modifier.wrapContentSize(Alignment.BottomEnd)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.End
+            ) {
                 Icon(painter = painterResource(R.drawable.ic_eye), contentDescription = null)
-                Text(text = "${(0..1000).random()}次浏览",modifier = Modifier.wrapContentSize(Alignment.Center))
+                Text(text = "${(0..1000).random()}次浏览",modifier = Modifier.padding(5.dp))
                 Icon(painter = painterResource(R.drawable.ic_time), contentDescription = null)
-                Text(text = "2021-${(0..9).random()}-${(0..30).random()}",modifier = Modifier.wrapContentSize(Alignment.Center))
+                Text(text = "2021-${(0..9).random()}-${(0..30).random()}",modifier = Modifier.padding(5.dp))
                 Icon(painter = painterResource(R.drawable.ic_phone), contentDescription = null)
-                Text(text = "${(10000000000..20000000000).random()}",modifier = Modifier.wrapContentSize(Alignment.Center))
+                Text(text = "${(10000000000..20000000000).random()}",modifier = Modifier.padding(5.dp))
             }
         }
     }
+}
+
+@Preview
+@Composable
+fun findNoticePreview(){
+    FindNoticeItem(findNotices[0])
 }

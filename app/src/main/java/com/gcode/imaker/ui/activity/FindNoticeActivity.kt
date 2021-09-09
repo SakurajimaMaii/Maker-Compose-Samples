@@ -9,15 +9,20 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.view.WindowCompat
 import com.gcode.imaker.ui.model.FindNotice
 import com.gcode.imaker.ui.model.FindNoticeItem
 import com.gcode.imaker.ui.model.findNotices
+import com.gcode.imaker.ui.theme.GradientProOne
+import com.gcode.imaker.ui.theme.XiangSuFamily
 import com.gcode.imaker.ui.theme.bkMain
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
@@ -41,11 +46,20 @@ class FindNoticeActivity : AppCompatActivity() {
                 
                 Column(modifier = Modifier
                     .fillMaxWidth()
-                    .background(bkMain(this))) {
+                    .background(GradientProOne.color_3)) {
 
                     Spacer(modifier = Modifier
                         .statusBarsHeight()
                         .fillMaxWidth())
+
+                    Text(
+                        text = "失物信息",
+                        fontSize = 30.sp,
+                        color = Color.White,
+                        modifier = Modifier.padding(15.dp,20.dp),
+                        fontWeight = FontWeight.Light,
+                        fontFamily = XiangSuFamily
+                    )
 
                     FindNoticeList(findNotices = findNotices)
                 }

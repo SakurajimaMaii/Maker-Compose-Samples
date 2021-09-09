@@ -3,6 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/button_white_background.xml" value="0.183203125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/ic_data.xml" value="0.2578125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/ic_eye.xml" value="0.22361111111111112" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/ic_like.xml" value="0.222265625" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/ic_phone.xml" value="0.22361111111111112" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/ic_search.xml" value="0.2578125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/drawable/switch_gray_track.xml" value="0.26640926640926643" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/activity_game.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/activity_student.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_add_find_notice.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_class.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_data.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_forum.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_person.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/fragment_teacher_home.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/game_model_item.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/layout/sidebar_header.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/menu/nav_menu.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/MakerComposeSamples/app/src/main/res/menu/tab_menu.xml" value="0.245703125" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_data.xml" value="0.20208333333333334" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_forum.xml" value="0.20208333333333334" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_home.xml" value="0.20208333333333334" />

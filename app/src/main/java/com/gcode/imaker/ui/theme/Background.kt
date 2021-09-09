@@ -36,11 +36,11 @@ fun bkMain(context: Context) = Brush.linearGradient(
 
 /**
  * Release item 背景图
- * @param navController NavController
+ * @param context Context
  * @return Brush
  */
 @RequiresApi(Build.VERSION_CODES.R)
-fun releaseLayoutBk(navController: NavController) = Brush.linearGradient(
+fun releaseLayoutBk(context: Context) = Brush.linearGradient(
     colors = listOf(
         GradientProOne.color_2,
         GradientProOne.color_3,
@@ -48,7 +48,7 @@ fun releaseLayoutBk(navController: NavController) = Brush.linearGradient(
     ),
     start = Offset(0f, 0f),
     end = Offset(
-        ScreenSizeUtils.getMobileScreenWidth(navController.context).toFloat(),
-        ScreenSizeUtils.getMobileScreenHeight(navController.context).toFloat()
+        ScreenSizeUtils.getMobileScreenWidth(context).toFloat(),
+        ScreenSizeUtils.getMobileScreenHeight(context).toFloat()
     )
 )

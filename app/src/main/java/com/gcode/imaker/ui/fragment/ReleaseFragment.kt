@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -54,12 +55,13 @@ fun ReleaseItems(releases: List<Release>, navController: NavController) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp, 0.dp),
+            .padding(20.dp, 0.dp ,0.dp ,0.dp),
         contentPadding = PaddingValues(vertical = 5.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        items(releases) { item ->
+        itemsIndexed(releases) { index,item ->
             ReleaseItem(
+                index,
                 release = item,
                 navController = navController,
                 clickEvent = { ReleaseItemClickEvent(item,navController) }

@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.WindowCompat
 import com.gcode.imaker.ui.component.*
+import com.gcode.imaker.ui.theme.XiangSuFamily
 import com.gcode.imaker.ui.theme.bkMain
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
@@ -61,7 +62,8 @@ class SignUpActivity:AppCompatActivity() {
                         }) {
                         Text(
                             text = "加入我们，创客！",
-                            fontWeight = FontWeight.Bold,
+                            fontWeight = FontWeight.Light,
+                            fontFamily = XiangSuFamily,
                             fontSize = 35.sp,
                             modifier = Modifier
                                 .padding(15.dp, 50.dp, 0.dp, 10.dp)

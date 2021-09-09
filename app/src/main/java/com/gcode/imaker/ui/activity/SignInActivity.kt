@@ -18,15 +18,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.view.WindowCompat
-import androidx.lifecycle.ViewModelProvider
 import com.gcode.imaker.ui.component.SignInButton
 import com.gcode.imaker.ui.component.passWordOutlinedTextField
 import com.gcode.imaker.ui.component.userNameOutlinedTextField
 import com.gcode.imaker.ui.theme.XiangSuFamily
 import com.gcode.imaker.ui.theme.bkMain
-import com.gcode.imaker.utils.ApplicationUtils
-import com.gcode.imaker.viewModel.TeacherLoginFragmentViewModel
-import com.gcode.tools.utils.MsgWindowUtils
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
@@ -38,10 +34,6 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 //Color(64,0,56)
 
 class SignInActivity : AppCompatActivity() {
-
-    private val viewModel by lazy {
-        ViewModelProvider(this)[TeacherLoginFragmentViewModel::class.java]
-    }
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -123,21 +115,6 @@ class SignInActivity : AppCompatActivity() {
                         }
                     }
                 }
-            }
-        }
-
-        viewModel.loginResult.observe(this){Object->
-            val result = Object.getOrNull()
-            if (result != null) {
-                if(result=="TRUE"){
-                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆成功")
-                    val intent = Intent(ApplicationUtils.context, HomeActivity::class.java)
-                    startActivity(intent)
-                }else{
-                    MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
-                }
-            }else{
-                MsgWindowUtils.showShortMsg(ApplicationUtils.context,"登陆失败")
             }
         }
     }
