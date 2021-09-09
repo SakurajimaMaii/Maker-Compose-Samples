@@ -3,20 +3,30 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_data.xml" value="0.20208333333333334" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_forum.xml" value="0.20208333333333334" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_home.xml" value="0.20208333333333334" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_link.xml" value="0.18125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/ic_release.xml" value="0.20208333333333334" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/login_model_green_sea_bk.xml" value="0.1423611111111111" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/drawable/login_model_orange_bk.xml" value="0.1423611111111111" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/activity_game.xml" value="0.245703125" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/activity_home.xml" value="0.11993114001530222" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/activity_start.xml" value="0.1260520275439939" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/content_sign_up.xml" value="0.245703125" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_add_find_notice.xml" value="0.16564207650273224" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_class.xml" value="0.1260520275439939" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_data.xml" value="0.14275956284153005" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_forum.xml" value="0.16564207650273224" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_person.xml" value="0.14275956284153005" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_release.xml" value="0.14275956284153005" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/fragment_teacher_home.xml" value="0.12031369548584545" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/game_model_item.xml" value="0.11796875" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/login_model_item.xml" value="0.1" />
         <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/layout/release_model_item.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/menu/nav_menu.xml" value="0.245703125" />
+        <entry key="..\:/WorkSpace/GitSpaceAndroid/jschool/app/src/main/res/menu/tab_menu.xml" value="0.245703125" />
       </map>
     </option>
   </component>

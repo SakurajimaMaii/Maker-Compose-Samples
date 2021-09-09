@@ -1,78 +1,87 @@
 package com.gcode.imaker.ui.fragment
 
 import android.content.Intent
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.DialogFragment
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.gcode.tools.adapter.BaseUtilBindingAdapter
-import com.gcode.imaker.BR
-import com.gcode.imaker.R
-import com.gcode.imaker.ui.model.ReleaseModel
+import android.os.Build
+import androidx.annotation.RequiresApi
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.gcode.imaker.ui.activity.FindNoticeActivity
 import com.gcode.imaker.ui.activity.GameActivity
-import com.gcode.imaker.databinding.FragmentReleaseBinding
+import com.gcode.imaker.ui.model.Release
+import com.gcode.imaker.ui.model.ReleaseItem
+import com.gcode.imaker.ui.theme.XiangSuFamily
 import com.gcode.imaker.utils.ApplicationUtils
+import com.gcode.tools.utils.MsgWindowUtils
 
-class ReleaseFragment : DialogFragment() {
-    private lateinit var binding:FragmentReleaseBinding
+@RequiresApi(Build.VERSION_CODES.R)
+@Composable
+fun ReleaseFragment(releases: List<Release>, navController: NavController) {
 
-    private val releaseModels = ArrayList<ReleaseModel>().apply {
-        add(ReleaseModel(ContextCompat.getDrawable(ApplicationUtils.context,R.drawable.ic_release_friend), "交友"))
-        add(ReleaseModel(ContextCompat.getDrawable(ApplicationUtils.context,R.drawable.ic_release_game),"竞赛活动"))
-        add(ReleaseModel(ContextCompat.getDrawable(ApplicationUtils.context,R.drawable.ic_release_find_notice),"寻物启事"))
-        add(ReleaseModel(ContextCompat.getDrawable(ApplicationUtils.context,R.drawable.ic_release_recruit),"社团招募"))
-        add(ReleaseModel(ContextCompat.getDrawable(ApplicationUtils.context,R.drawable.ic_release_add),"敬请期待"))
-    }
-
-    inner class ReleaseModelAdapter(items: MutableList<ReleaseModel>) : BaseUtilBindingAdapter<ReleaseModel>(items){
-        override fun setVariableId(): Int {
-            return BR.rm
-        }
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_release,
-            container,
-            false
+    Column(modifier = Modifier.fillMaxSize()) {
+        Text(
+            text = "选择你要发布的信息种类",
+            color = Color.Black,
+            fontWeight = FontWeight.Light,
+            fontSize = 30.sp,
+            modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 0.dp),
+            fontFamily = XiangSuFamily
         )
-        return binding.root
+
+        Text(
+            text = "目前提供以下集中信息类型",
+            color = Color.Gray,
+            fontSize = 15.sp,
+            modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 15.dp),
+            fontWeight = FontWeight.Bold
+        )
+
+        ReleaseItems(releases, navController)
     }
+}
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        binding.releaseInfTypeList.apply {
-            layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)
-            adapter = ReleaseModelAdapter(releaseModels).apply {
-                setOnItemClickListener(object :BaseUtilBindingAdapter.OnItemClickListener{
-                    override fun onItemClick(itemView: View?, pos: Int) {
-                        when(pos){
-                            1->{
-                                startActivity(Intent(this@ReleaseFragment.context, GameActivity::class.java))
-                            }
-                            2->{
-                                startActivity(Intent(this@ReleaseFragment.context,
-                                    FindNoticeActivity::class.java))
-                            }
-                        }
-                    }
-
-                    override fun onItemClick(itemView: View?, pos: Int, itemId: Long) {
-                        //
-                    }
-                })
-            }
+@RequiresApi(Build.VERSION_CODES.R)
+@Composable
+fun ReleaseItems(releases: List<Release>, navController: NavController) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(20.dp, 0.dp),
+        contentPadding = PaddingValues(vertical = 5.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ) {
+        items(releases) { item ->
+            ReleaseItem(
+                release = item,
+                navController = navController,
+                clickEvent = { ReleaseItemClickEvent(item,navController) }
+            )
         }
+    }
+}
 
+/**
+ * ReleaseItem点击事件
+ */
+val ReleaseItemClickEvent = { release: Release,navController:NavController ->
+    when (release) {
+        Release.Competition -> {
+            val intent = Intent(navController.context, GameActivity::class.java)
+            navController.context.startActivity(intent)
+        }
+        Release.FindNotice -> {
+            val intent = Intent(navController.context, FindNoticeActivity::class.java)
+            navController.context.startActivity(intent)
+        }
+        else ->
+            MsgWindowUtils.showShortMsg(ApplicationUtils.context, release.title)
     }
 }

@@ -27,7 +27,8 @@ import androidx.core.view.WindowCompat
 import com.gcode.imaker.R
 import com.gcode.imaker.ui.component.SignInButton
 import com.gcode.imaker.ui.component.SignUpButton
-import com.gcode.imaker.ui.theme.BkMain
+import com.gcode.imaker.ui.theme.XiangSuFamily
+import com.gcode.imaker.ui.theme.bkMain
 import com.gcode.imaker.ui.theme.shapes
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
@@ -57,7 +58,7 @@ class StartActivity : AppCompatActivity() {
                             .fillMaxWidth()
                             .fillMaxHeight()
                             .background(
-                                BkMain(this)
+                                bkMain(this)
                             )) {
                         val (statusBar,logo,subTitle,sign) = createRefs()
 
@@ -77,12 +78,16 @@ class StartActivity : AppCompatActivity() {
                                 }
                                 .size(150.dp, 80.dp))
 
-                        Text(text = "创新是第一生产力",textAlign = TextAlign.Start,fontSize = 25.sp,fontWeight = FontWeight.Bold,color = colorResource(
-                            id = R.color.util_black
-                        ),modifier = Modifier.constrainAs(subTitle){
-                            top.linkTo(logo.bottom,5.dp)
-                            absoluteLeft.linkTo(parent.start,margin = 10.dp)
-                        })
+                        Text(
+                            text = "创新是第一生产力",
+                            textAlign = TextAlign.Start,
+                            fontSize = 25.sp,
+                            fontWeight = FontWeight.Light,
+                            color = colorResource(id = R.color.util_black),
+                            modifier = Modifier.constrainAs(subTitle){
+                                top.linkTo(logo.bottom,5.dp)
+                                absoluteLeft.linkTo(parent.start,margin = 10.dp) },
+                            fontFamily = XiangSuFamily)
 
                         Column(modifier = Modifier
                             .height(IntrinsicSize.Min)

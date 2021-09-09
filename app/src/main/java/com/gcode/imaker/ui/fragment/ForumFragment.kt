@@ -25,15 +25,5 @@ class ForumFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.fab.setOnClickListener {
-            binding.transformationLayout.startTransform()
-        }
-
-        binding.cv.setOnClickListener {
-            binding.transformationLayout.finishTransform()
-        }
-
-        binding.listWv.loadUrl("file:///android_asset/list.html")
     }
 }

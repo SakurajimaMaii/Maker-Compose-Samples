@@ -63,14 +63,10 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
-    implementation 'androidx.navigation:navigation-fragment:2.3.5'
-    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     annotationProcessor 'com.android.databinding:compiler:4.0.1'
     implementation 'androidx.annotation:annotation:1.2.0'
-    //底部导航栏
-    implementation 'nl.joery.animatedbottombar:library:1.1.0'
-    //donut甜甜圈库
-    implementation 'app.futured.donut:donut:2.1.0'
     //天气
     implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
     implementation 'com.google.code.gson:gson:2.8.6'
@@ -80,8 +76,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha03"
-    //渐变色字体
-    implementation 'io.github.weilianyang:gradienttext:1.0.2'
     //NavigationView
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -89,7 +83,6 @@ dependencies {
     implementation 'com.github.SakurajimaMaii:ShapeButton:beta-2.0.0'
     //自定义工具类
     implementation 'com.github.SakurajimaMaii:Utils:2.2.0'
-    implementation 'com.github.donkingliang:LabelsView:1.4.1'
     //TransformationLayout
     implementation "com.github.skydoves:transformationlayout:1.0.8"
     implementation "com.hedgehog.ratingbar:app:1.1.2"
@@ -112,6 +105,10 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
     // 相对约束布局
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
+    //导航组件
+    implementation "androidx.navigation:navigation-compose:2.4.0-alpha05"
+    // 加载网络图片
+    implementation "com.google.accompanist:accompanist-coil:0.11.1"
 
     implementation "com.google.accompanist:accompanist-insets:0.17.0"
     implementation "com.google.accompanist:accompanist-insets-ui:0.17.0"

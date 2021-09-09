@@ -15,10 +15,6 @@
             style="@style/CustomizePageTitle"
             android:textColor="@color/white"/>
 
-        <WebView
-            android:id="@+id/classWebView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
 
     </LinearLayout>
 </layout>

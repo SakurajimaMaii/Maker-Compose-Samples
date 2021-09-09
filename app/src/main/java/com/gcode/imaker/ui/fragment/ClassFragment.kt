@@ -24,9 +24,6 @@ class ClassFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.classWebView.settings.javaScriptEnabled =true
-        binding.classWebView.loadUrl("file:///android_asset/class.html")
     }
 
 }

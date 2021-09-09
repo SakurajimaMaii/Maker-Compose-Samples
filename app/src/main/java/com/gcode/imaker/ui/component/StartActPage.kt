@@ -75,14 +75,18 @@ fun SignInButton(normalTextColor: Color = Color.White,
 }
 
 @Composable
-fun SignUpButton(click: () -> Unit){
+fun SignUpButton(normalTextColor: Color = Color.White,
+                 pressedTextColor: Color = Color.White,
+                 normaBtnColor: Color = Color(0xFF3498db),
+                 pressedBtnColor: Color = Color(0xFF2980b9),
+                 click: () -> Unit){
     BaseSignButton(
         normalText = "注册",
         pressedText = "注册",
-        normalTextColor = Color.White,
-        pressedTextColor = Color.White,
-        normaBtnColor = Color(0xFF1abc9c),
-        pressedBtnColor = Color(0xFF16a085),
+        normalTextColor = normalTextColor,
+        pressedTextColor = pressedTextColor,
+        normaBtnColor = normaBtnColor,
+        pressedBtnColor = pressedBtnColor,
         click = click
     )
 }

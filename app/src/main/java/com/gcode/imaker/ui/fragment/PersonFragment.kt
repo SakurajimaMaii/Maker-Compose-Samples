@@ -24,8 +24,5 @@ class PersonFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding.personWebView.settings.javaScriptEnabled =true
-        binding.personWebView.loadUrl("file:///android_asset/person.html")
     }
 }

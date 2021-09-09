@@ -1,152 +1,67 @@
 package com.gcode.imaker.ui.activity
 
-import android.graphics.Typeface
+import android.os.Build
 import android.os.Bundle
-import android.widget.SearchView
+import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
-import androidx.databinding.DataBindingUtil
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.gcode.imaker.R
-import com.gcode.imaker.databinding.ActivityFindNoticeBinding
-import com.gcode.imaker.ui.adapter.FindNoticeAdapter
-import com.gcode.imaker.ui.fragment.AddFindNoticeFragment
-import com.gcode.imaker.ui.model.FindNoticeModel
-import com.gcode.imaker.utils.SearchNoticeUtils
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
+import com.gcode.imaker.ui.model.FindNotice
+import com.gcode.imaker.ui.model.FindNoticeItem
+import com.gcode.imaker.ui.model.findNotices
+import com.gcode.imaker.ui.theme.bkMain
+import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.insets.statusBarsHeight
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 class FindNoticeActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityFindNoticeBinding
-
-    /**
-     * 搜索到的数据
-     */
-    private var searchResult: List<FindNoticeModel> = ArrayList()
-
-    /**
-     * 做个数据缓存
-     */
-    private val cacheNoticeData: MutableList<FindNoticeModel> = ArrayList()
-
-    private lateinit var findNotices:MutableList<FindNoticeModel>
-
+    
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        WindowCompat.setDecorFitsSystemWindows(window,false)
+        
         super.onCreate(savedInstanceState)
 
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_find_notice)
+        setContent{
+            ProvideWindowInsets{
+                val systemUiController = rememberSystemUiController()
+                SideEffect {
+                    systemUiController.setStatusBarColor(Color.Transparent, darkIcons = false)
+                }
+                
+                Column(modifier = Modifier
+                    .fillMaxWidth()
+                    .background(bkMain(this))) {
 
-        binding.titleOne.typeface = Typeface.DEFAULT_BOLD
-        binding.titleOne.textSize = 25f
-        binding.titleTwo.typeface = Typeface.DEFAULT
-        binding.titleTwo.textSize = 20f
+                    Spacer(modifier = Modifier
+                        .statusBarsHeight()
+                        .fillMaxWidth())
 
-        findNotices = ArrayList<FindNoticeModel>().apply {
-            apply {
-
-                val findNoticeItem = FindNoticeModel(
-                    "平板",
-                    "在食堂的时候不小心把平板搞丢了,想问一下有没有人捡到我的平板",
-                    ArrayList<String>().apply {
-                        add("华为")
-                    },
-                    ContextCompat.getDrawable(this@FindNoticeActivity,R.drawable.ipad)
-                )
-                add(findNoticeItem)
-                cacheNoticeData.add(findNoticeItem)
-
-                val findNoticeItem1 = FindNoticeModel(
-                    "书包",
-                    "一个蓝色书包,在操场附近丢的",
-                    ArrayList<String>().apply {
-                        add("书包")
-                        add("蓝色")
-                        add("操场")
-                    },
-                    ContextCompat.getDrawable(this@FindNoticeActivity, R.drawable.bag)
-                )
-                add(findNoticeItem1)
-                cacheNoticeData.add(findNoticeItem1)
-
-                val findNoticeItem2 = FindNoticeModel(
-                    "学生卡",
-                    "丢了了一张学生卡,学号19104565,还请捡到的小伙伴联系我",
-                    ArrayList<String>().apply {
-                        add("经管学院")
-                        add("19级")
-                    },
-                    ContextCompat.getDrawable(this@FindNoticeActivity,R.drawable.lost)
-                )
-                add(findNoticeItem2)
-                cacheNoticeData.add(findNoticeItem2)
-
-                val findNoticeItem3 = FindNoticeModel(
-                    "耳机",
-                    "在六号楼211丢了一副耳机,Airpods的,有没有伙伴看见啊",
-                    ArrayList<String>().apply {
-                        add("Airpods")
-                        add("Apple")
-                        add("耳机")
-                    },
-                    ContextCompat.getDrawable(this@FindNoticeActivity,R.drawable.earphone)
-                )
-                add(findNoticeItem3)
-                cacheNoticeData.add(findNoticeItem3)
-
-                val findNoticeItem4 = FindNoticeModel(
-                    "小米手环",
-                    "操场打球的时候不知道放在那里了,有没有下午2点在操场打球的伙伴看见",
-                    ArrayList<String>().apply {
-                        add("小米")
-                        add("手环")
-                        add("篮球操场")
-                    },
-                    ContextCompat.getDrawable(this@FindNoticeActivity,R.drawable.wing)
-                )
-                add(findNoticeItem4)
-                cacheNoticeData.add(findNoticeItem4)
+                    FindNoticeList(findNotices = findNotices)
+                }
             }
         }
+    }
+}
 
-        val adapter = FindNoticeAdapter(findNotices)
-
-        binding.findNoticeList.apply {
-            this.adapter = adapter
-            layoutManager = LinearLayoutManager(this@FindNoticeActivity)
-        }
-
-        binding.noticeSv.isSubmitButtonEnabled = true
-        binding.noticeSv.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-
-            override fun onQueryTextSubmit(query: String): Boolean {
-                searchResult = SearchNoticeUtils.searchNoticeByInput(findNotices, query)
-                findNotices.clear()
-                findNotices.addAll(searchResult)
-                adapter.notifyDataSetChanged()
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String): Boolean {
-                findNotices.clear()
-                findNotices.addAll(cacheNoticeData)
-                adapter.notifyDataSetChanged()
-                return false
-            }
-        })
-
-        binding.titleOne.setOnClickListener {
-            binding.titleOne.typeface = Typeface.DEFAULT_BOLD
-            binding.titleOne.textSize = 25f
-            binding.titleTwo.typeface = Typeface.DEFAULT
-            binding.titleTwo.textSize = 20f
-        }
-
-        binding.titleTwo.setOnClickListener {
-            binding.titleOne.typeface = Typeface.DEFAULT
-            binding.titleOne.textSize = 20f
-            binding.titleTwo.typeface = Typeface.DEFAULT_BOLD
-            binding.titleTwo.textSize = 25f
-            val dialog = AddFindNoticeFragment()
-            dialog.show(supportFragmentManager,"FindNoticeActivity")
+@Composable
+fun FindNoticeList(findNotices:List<FindNotice>){
+    LazyColumn(
+        modifier = Modifier.padding(15.dp,0.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
+    ){
+        items(findNotices){ item->
+            FindNoticeItem(item)
         }
     }
 }

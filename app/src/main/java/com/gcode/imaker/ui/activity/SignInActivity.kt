@@ -10,10 +10,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -24,14 +22,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.gcode.imaker.ui.component.SignInButton
 import com.gcode.imaker.ui.component.passWordOutlinedTextField
 import com.gcode.imaker.ui.component.userNameOutlinedTextField
-import com.gcode.imaker.ui.theme.BkMain
+import com.gcode.imaker.ui.theme.XiangSuFamily
+import com.gcode.imaker.ui.theme.bkMain
 import com.gcode.imaker.utils.ApplicationUtils
 import com.gcode.imaker.viewModel.TeacherLoginFragmentViewModel
 import com.gcode.tools.utils.MsgWindowUtils
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.statusBarsHeight
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
-import java.nio.file.WatchEvent
 
 //Color(217,255,214),
 //Color(171,255,222),
@@ -60,7 +58,7 @@ class SignInActivity : AppCompatActivity() {
                 ConstraintLayout(modifier = Modifier
                     .fillMaxWidth()
                     .fillMaxHeight()
-                    .background(BkMain(this))) {
+                    .background(bkMain(this))) {
 
                     val (statusBar,firstColumn,secondColumn) = createRefs()
 
@@ -79,13 +77,14 @@ class SignInActivity : AppCompatActivity() {
                         }) {
                         Text(
                             text = "欢迎回来，创客！",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 35.sp,
+                            fontWeight = FontWeight.Light,
+                            fontSize = 30.sp,
                             modifier = Modifier
-                                .padding(15.dp, 50.dp, 0.dp, 10.dp)
+                                .padding(15.dp, 30.dp, 0.dp, 10.dp)
                                 .width(IntrinsicSize.Max),
                             color = Color.Black,
-                            textAlign = TextAlign.Start
+                            textAlign = TextAlign.Start,
+                            fontFamily = XiangSuFamily
                         )
 
                         Text(
@@ -93,10 +92,11 @@ class SignInActivity : AppCompatActivity() {
                             fontWeight = FontWeight.Bold,
                             fontSize = 15.sp,
                             modifier = Modifier
-                                .padding(15.dp, 5.dp, 15.dp, 20.dp)
+                                .padding(15.dp, 0.dp, 15.dp, 20.dp)
                                 .fillMaxWidth(),
                             color = Color(0xff535c68),
-                            softWrap = true
+                            softWrap = true,
+                            textAlign = TextAlign.Start
                         )
 
                         Column(modifier = Modifier.padding(15.dp,20.dp,15.dp,0.dp)){

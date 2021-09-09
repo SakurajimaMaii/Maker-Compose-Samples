@@ -8,7 +8,9 @@ import androidx.compose.material.TextFieldDefaults.textFieldColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import com.gcode.imaker.ui.theme.XinYuanFamily
 
 /**
  *作者:created by HP on 2021/9/7 19:37
@@ -79,6 +81,97 @@ fun passWordOutlinedTextField():String{
     return passWord
 }
 
+@Composable
+fun emailOutlinedTextField():String{
+    var email by remember {
+        mutableStateOf("")
+    }
+
+    OutlinedTextField(
+        value = email,
+        onValueChange = { email = it },
+        label = { Text("请输入邮箱") },
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        colors = textFieldColors(
+            focusedIndicatorColor = mainColor,
+            focusedLabelColor = mainColor,
+            cursorColor = mainColor
+        )
+    )
+
+    return email
+}
+
+@Composable
+fun campusOutlinedTextField():String{
+    var campus by remember {
+        mutableStateOf("")
+    }
+
+    OutlinedTextField(
+        value = campus,
+        onValueChange = { campus = it },
+        label = { Text("请输入校区") },
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        colors = textFieldColors(
+            focusedIndicatorColor = mainColor,
+            focusedLabelColor = mainColor,
+            cursorColor = mainColor
+        )
+    )
+
+    return campus
+}
+
+@Composable
+fun qqOutlinedTextField():String{
+    var qq by remember {
+        mutableStateOf("")
+    }
+
+    OutlinedTextField(
+        value = qq,
+        onValueChange = { qq = it },
+        label = { Text("请输入qq号") },
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        colors = textFieldColors(
+            focusedIndicatorColor = mainColor,
+            focusedLabelColor = mainColor,
+            cursorColor = mainColor
+        )
+    )
+
+    return qq
+}
+
+@Composable
+fun groupOutlinedTextField():String{
+    var group by remember {
+        mutableStateOf("")
+    }
+
+    OutlinedTextField(
+        value = group,
+        onValueChange = { group = it },
+        label = { Text("请输入密码") },
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min),
+        colors = textFieldColors(
+            focusedIndicatorColor = mainColor,
+            focusedLabelColor = mainColor,
+            cursorColor = mainColor
+        )
+    )
+
+    return group
+}
 
 @Preview
 @Composable
