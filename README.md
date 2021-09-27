@@ -16,6 +16,9 @@
 
 参考[更新文档](https://github.com/SakurajimaMaii/jSchool/blob/master/log/UpDateLog.md)
 
+## 项目截图
+<img src="https://img-blog.csdnimg.cn/21b9895e25964d65b616e642f4c022b7.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/878a618467ae454abe35993d8e04702d.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/74b64fe4b7f64098bebad259cee292d6.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/c737c18d73034d938d4b53a7897ee46d.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/924796beb9f44cdb82ccebf8e9f637f0.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/093f47fc76124c63802b3b6b5be268fd.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/924796beb9f44cdb82ccebf8e9f637f0.jpg" width="200px" /><img src="https://img-blog.csdnimg.cn/52b672428c384756ac08eb4ba73a01d4.jpg" width="200px" />
+
 ## 项目许可证
 MIT License
 
