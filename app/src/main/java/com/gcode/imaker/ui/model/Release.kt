@@ -1,5 +1,6 @@
 package com.gcode.imaker.ui.model
 
+import android.app.Activity
 import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.annotation.DrawableRes
@@ -60,7 +61,7 @@ val releases = listOf(Release.Competition,Release.Member,Release.Mission,Release
  */
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ReleaseItem(index:Int ,release: Release, navController: NavController, clickEvent: () -> Unit) {
+fun ReleaseItem(index:Int, release: Release, activity: Activity, clickEvent: () -> Unit) {
 
     Row {
         if (index % 2 != 0){
@@ -79,7 +80,7 @@ fun ReleaseItem(index:Int ,release: Release, navController: NavController, click
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(IntrinsicSize.Min)
-                    .background(brush = releaseLayoutBk(navController.context)),
+                    .background(brush = releaseLayoutBk(activity)),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(

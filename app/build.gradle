@@ -18,7 +18,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -82,7 +82,7 @@ dependencies {
     //自定标button
     implementation 'com.github.SakurajimaMaii:ShapeButton:beta-2.0.0'
     //自定义工具类
-    implementation 'com.github.SakurajimaMaii:Utils:2.2.0'
+    implementation 'com.github.SakurajimaMaii:ToolsForAndroid:2.2.1'
     //TransformationLayout
     implementation "com.github.skydoves:transformationlayout:1.0.8"
     implementation "com.hedgehog.ratingbar:app:1.1.2"

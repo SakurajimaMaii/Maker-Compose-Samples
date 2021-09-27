@@ -1,12 +1,11 @@
 package com.gcode.imaker.ui.theme
 
-import android.content.Context
+import android.app.Activity
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.navigation.NavController
 import com.gcode.tools.utils.ScreenSizeUtils
 
 /**
@@ -16,12 +15,12 @@ import com.gcode.tools.utils.ScreenSizeUtils
 
 
 /**
+ * Bk main
  * 主要背景图
- * @param context Context
- * @return Brush
+ * @param activity
  */
 @RequiresApi(Build.VERSION_CODES.R)
-fun bkMain(context: Context) = Brush.linearGradient(
+fun bkMain(activity: Activity) = Brush.linearGradient(
     colors = listOf(
         Color(217,255,214),
         Color(171,255,222),
@@ -29,18 +28,18 @@ fun bkMain(context: Context) = Brush.linearGradient(
     ),
     start = Offset(0f, 0f),
     end = Offset(
-        ScreenSizeUtils.getMobileScreenWidth(context).toFloat(),
-        ScreenSizeUtils.getMobileScreenHeight(context).toFloat()
+        ScreenSizeUtils.getMobileScreenWidth(activity).toFloat(),
+        ScreenSizeUtils.getMobileScreenHeight(activity).toFloat()
     )
 )
 
 /**
- * Release item 背景图
- * @param context Context
- * @return Brush
+ * Release layout bk
+ * Release item主要背景图
+ * @param activity
  */
 @RequiresApi(Build.VERSION_CODES.R)
-fun releaseLayoutBk(context: Context) = Brush.linearGradient(
+fun releaseLayoutBk(activity: Activity) = Brush.linearGradient(
     colors = listOf(
         GradientProOne.color_2,
         GradientProOne.color_3,
@@ -48,7 +47,7 @@ fun releaseLayoutBk(context: Context) = Brush.linearGradient(
     ),
     start = Offset(0f, 0f),
     end = Offset(
-        ScreenSizeUtils.getMobileScreenWidth(context).toFloat(),
-        ScreenSizeUtils.getMobileScreenHeight(context).toFloat()
+        ScreenSizeUtils.getMobileScreenWidth(activity).toFloat(),
+        ScreenSizeUtils.getMobileScreenHeight(activity).toFloat()
     )
 )

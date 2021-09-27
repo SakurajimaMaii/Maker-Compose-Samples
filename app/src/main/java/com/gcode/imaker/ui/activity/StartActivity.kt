@@ -11,8 +11,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Divider
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,6 +22,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -64,7 +67,8 @@ class StartActivity : AppCompatActivity() {
 
                         Spacer(modifier = Modifier
                             .statusBarsHeight()
-                            .fillMaxWidth().constrainAs(statusBar){
+                            .fillMaxWidth()
+                            .constrainAs(statusBar) {
                                 top.linkTo(parent.top)
                             })
 
@@ -118,5 +122,15 @@ class StartActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+}
+
+@Preview
+@Composable
+fun RowTest(){
+    Row(modifier = Modifier.height(IntrinsicSize.Min)) {
+       Text(text = "123")
+        Divider(modifier = Modifier.width(1.dp).fillMaxHeight(),color = Color.Black)
+       Text(text = "456")
     }
 }

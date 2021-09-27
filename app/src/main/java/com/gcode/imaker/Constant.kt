@@ -11,27 +11,22 @@ import java.io.Serializable
  */
 object Constant : Serializable {
     /**
-     * 有客户端连接
+     * 主页导航
      */
-    const val MSG_GOT_A_CLINET = 3
+    const val HOME_PAGE_ROUTE = "home"
 
     /**
-     * 连接到服务器
+     * 论坛页面导航
      */
-    const val MSG_CONNECTED_TO_SERVER = 4
+    const val FORUM_PAGE_ROUTE = "forum"
 
     /**
      * 获取到数据
      */
-    const val MSG_GOT_DATA = 5
+    const val RELEASE_PAGE_ROUTE = "release"
 
     /**
-     * 出错
+     * 关于页面导航
      */
-    const val MSG_ERROR = -1
-
-    /**
-     * startAct to SignAct Tag
-     */
-    const val SIGN_ACTION_TAG = "SIGN_ACTION"
+    const val ABOUT_PAGE_ROUTE = "about"
 }

@@ -3,14 +3,11 @@ package com.gcode.imaker.ui.component
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
-import androidx.compose.material.TextFieldColors
 import androidx.compose.material.TextFieldDefaults.textFieldColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import com.gcode.imaker.ui.theme.XinYuanFamily
 
 /**
  *作者:created by HP on 2021/9/7 19:37

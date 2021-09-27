@@ -77,5 +77,8 @@ fun FindNoticeList(findNotices:List<FindNotice>){
         items(findNotices){ item->
             FindNoticeItem(item)
         }
+        item {
+            Spacer(modifier = Modifier.height(10.dp))
+        }
     }
 }

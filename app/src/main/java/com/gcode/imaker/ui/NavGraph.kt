@@ -1,9 +1,11 @@
 package com.gcode.imaker.ui
 
+import android.app.Activity
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -21,23 +23,28 @@ import com.gcode.imaker.ui.model.releases
 @ExperimentalAnimationApi
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun HomeActNavGraph(navController: NavHostController, startDestination: String){
-    NavHost(navController = navController, startDestination = startDestination){
+fun HomeActNavGraph(
+    navController: NavHostController,
+    startDestination: String,
+    activity: Activity,
+    modifier: Modifier = Modifier
+){
+    NavHost(navController = navController, startDestination = startDestination,modifier = modifier){
         // 首页
         composable(Screen.Home.route) {
-            HomeFragment(navController)
+            HomeFragment(activity)
         }
         // 论坛
         composable(Screen.Forum.route) {
-            ForumFragment(navController)
+            ForumFragment()
         }
         // 发布
         composable(Screen.Release.route) {
-            ReleaseFragment(releases,navController)
+            ReleaseFragment(releases,navController,activity)
         }
         // 数据
         composable(Screen.About.route) {
-            AboutFragment(navController)
+            AboutFragment(activity)
         }
     }
 }

@@ -1,7 +1,9 @@
 package com.gcode.imaker.ui.fragment
 
+import android.app.Activity
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -12,19 +14,16 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
 import com.gcode.imaker.ui.model.Project
 import com.gcode.imaker.ui.model.ProjectItem
 import com.gcode.imaker.ui.model.projects
 import com.gcode.imaker.ui.theme.XiangSuFamily
 import com.gcode.imaker.ui.theme.titleStartDimen
 import com.gcode.imaker.ui.theme.titleTopDimen
-import androidx.compose.foundation.layout.Spacer as Spacer
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun HomeFragment(navHostController: NavHostController) {
+fun HomeFragment(activity: Activity) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -44,24 +43,19 @@ fun HomeFragment(navHostController: NavHostController) {
             modifier = Modifier.padding(titleStartDimen, titleTopDimen, 0.dp, 15.dp)
         )
 
-        ProjectItems(projects = projects,navHostController)
+        ProjectItems(projects = projects,activity)
     }
 }
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ProjectItems(projects:List<Project>,navHostController:NavController){
-    Column(
-        modifier = Modifier.fillMaxWidth()
+fun ProjectItems(projects:List<Project>,activity: Activity){
+    LazyColumn(
+        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ){
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 8.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
-        ){
-            items(projects){ item->
-                ProjectItem(item,navHostController)
-            }
+        items(projects){ item->
+            ProjectItem(item,activity)
         }
     }
 }

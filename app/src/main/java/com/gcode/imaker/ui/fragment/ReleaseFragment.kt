@@ -1,11 +1,11 @@
 package com.gcode.imaker.ui.fragment
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +25,7 @@ import com.gcode.tools.utils.MsgWindowUtils
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ReleaseFragment(releases: List<Release>, navController: NavController) {
+fun ReleaseFragment(releases: List<Release>, navController: NavController, activity: Activity) {
 
     Column(modifier = Modifier.fillMaxSize()) {
         Text(
@@ -45,13 +45,13 @@ fun ReleaseFragment(releases: List<Release>, navController: NavController) {
             fontWeight = FontWeight.Bold
         )
 
-        ReleaseItems(releases, navController)
+        ReleaseItems(releases, navController, activity)
     }
 }
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ReleaseItems(releases: List<Release>, navController: NavController) {
+fun ReleaseItems(releases: List<Release>, navController: NavController ,activity: Activity) {
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
@@ -63,7 +63,7 @@ fun ReleaseItems(releases: List<Release>, navController: NavController) {
             ReleaseItem(
                 index,
                 release = item,
-                navController = navController,
+                activity = activity,
                 clickEvent = { ReleaseItemClickEvent(item,navController) }
             )
         }

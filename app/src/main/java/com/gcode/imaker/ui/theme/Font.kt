@@ -19,10 +19,10 @@ val XiangSuFamily = FontFamily(
  * 思源黑体
  * https://www.fonts.net.cn/font-34559141682.html
  */
-val XinYuanFamily = FontFamily(
-    Font(R.font.source_han_sans_cn_bold, FontWeight.Bold),
-    Font(R.font.source_han_sans_cn_extra_bold, FontWeight.ExtraBold),
-    Font(R.font.source_han_sans_cn_light, FontWeight.Light),
-    Font(R.font.source_han_sans_cn_extra_light, FontWeight.ExtraLight),
-    Font(R.font.source_han_sans_cn_medium, FontWeight.Medium)
-)
+//val XinYuanFamily = FontFamily(
+//    Font(R.font.source_han_sans_cn_bold, FontWeight.Bold),
+//    Font(R.font.source_han_sans_cn_extra_bold, FontWeight.ExtraBold),
+//    Font(R.font.source_han_sans_cn_light, FontWeight.Light),
+//    Font(R.font.source_han_sans_cn_extra_light, FontWeight.ExtraLight),
+//    Font(R.font.source_han_sans_cn_medium, FontWeight.Medium)
+//)

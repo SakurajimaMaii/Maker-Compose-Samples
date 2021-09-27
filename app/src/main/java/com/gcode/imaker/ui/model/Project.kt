@@ -1,5 +1,6 @@
 package com.gcode.imaker.ui.model
 
+import android.app.Activity
 import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
@@ -66,12 +67,12 @@ val projects = listOf(
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun ProjectItem(project: Project,navController: NavController){
+fun ProjectItem(project: Project,activity: Activity){
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(20.dp))
-            .background(releaseLayoutBk(navController.context))
+            .background(releaseLayoutBk(activity))
     ) {
         Image(
             painter = rememberCoilPainter(

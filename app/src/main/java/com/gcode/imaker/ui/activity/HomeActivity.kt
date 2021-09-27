@@ -1,5 +1,6 @@
 package com.gcode.imaker.ui.activity
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.annotation.DrawableRes
@@ -22,16 +23,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.core.view.WindowCompat
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.gcode.imaker.Constant.ABOUT_PAGE_ROUTE
+import com.gcode.imaker.Constant.FORUM_PAGE_ROUTE
+import com.gcode.imaker.Constant.HOME_PAGE_ROUTE
+import com.gcode.imaker.Constant.RELEASE_PAGE_ROUTE
 import com.gcode.imaker.R
 import com.gcode.imaker.ui.HomeActNavGraph
-import com.gcode.imaker.ui.fragment.ForumFragment
-import com.gcode.imaker.ui.fragment.ReleaseFragment
-import com.gcode.imaker.ui.model.releases
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.google.accompanist.insets.navigationBarsPadding
 import com.google.accompanist.insets.statusBarsHeight
@@ -43,21 +42,17 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        WindowCompat.setDecorFitsSystemWindows(window,false)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
 
         setContent {
-            HomeApp()
+            HomeApp(this)
         }
     }
 }
 
 @ExperimentalAnimationApi
 @Composable
-fun HomeApp() {
-
-    val list_cursor = listOf(
-        BottomNavCursor.Home,BottomNavCursor.Forum,BottomNavCursor.Release,BottomNavCursor.About
-    )
+fun HomeApp(activity: Activity) {
 
     // 记住选中tab位置
     var selectIndex by remember {
@@ -75,7 +70,7 @@ fun HomeApp() {
         Scaffold(
             bottomBar = {
                 BottomNavigation(
-                    backgroundColor = Color(217,255,214),
+                    backgroundColor = Color(217, 255, 214),
                     modifier = Modifier.navigationBarsPadding()
                 ) {
                     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -86,9 +81,6 @@ fun HomeApp() {
                             selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
                             onClick = {
                                 navController.navigate(screen.route) {
-                                    // Pop up to the start destination of the graph to
-                                    // avoid building up a large stack of destinations
-                                    // on the back stack as users select items
                                     popUpTo(navController.graph.findStartDestination().id) {
                                         saveState = true
                                     }
@@ -98,28 +90,17 @@ fun HomeApp() {
                                     // Restore state when reselecting a previously selected item
                                     restoreState = true
                                 }
-
                                 selectIndex = index
                             },
                             icon = {
-                                when (index) {
-                                    selectIndex -> {
-                                        Image(
-                                            painter = painterResource(id = list_cursor[index].curIcon),
-                                            contentDescription = null
-                                        )
-                                    }
-                                    else -> {
-                                        Image(
-                                            painter = painterResource(id = list_cursor[index].curIcon),
-                                            contentDescription = null
-                                        )
-                                    }
-                                }
+                                Image(
+                                    painter = painterResource(id = screen.iconId),
+                                    contentDescription = null
+                                )
                             },
                             label = {
                                 Text(
-                                    text = stringResource(id = list_cursor[index].curName),
+                                    text = stringResource(id = screen.resourceId),
                                     textAlign = TextAlign.Center,
                                     color = if (index == selectIndex)
                                         Color(0xFF0077E6)
@@ -132,15 +113,24 @@ fun HomeApp() {
                 }
             }
         )
-        {
-            Column(modifier = Modifier
-                .background(Color(217, 255, 214))
-                .fillMaxSize()) {
-                Spacer(modifier = Modifier
-                    .statusBarsHeight()
-                    .fillMaxWidth())
+        { innerContentPadding ->
+            Column(
+                modifier = Modifier
+                    .background(Color(217, 255, 214))
+                    .fillMaxSize()
+            ) {
+                Spacer(
+                    modifier = Modifier
+                        .statusBarsHeight()
+                        .fillMaxWidth()
+                )
 
-                HomeActNavGraph(navController = navController, startDestination = Screen.Home.route)
+                HomeActNavGraph(
+                    navController = navController,
+                    startDestination = Screen.Home.route,
+                    activity,
+                    modifier = Modifier.padding(innerContentPadding)
+                )
             }
         }
     }
@@ -152,11 +142,15 @@ fun HomeApp() {
  * @property resourceId Int
  * @constructor
  */
-sealed class Screen(val route: String, @StringRes val resourceId: Int) {
-    object Home : Screen("home", R.string.home)
-    object Forum : Screen("forum", R.string.forum)
-    object Release: Screen("release", R.string.release)
-    object About: Screen("about", R.string.about)
+sealed class Screen(
+    val route: String,
+    @StringRes val resourceId: Int,
+    @DrawableRes val iconId: Int
+) {
+    object Home : Screen(HOME_PAGE_ROUTE, R.string.home, R.drawable.ic_home)
+    object Forum : Screen(FORUM_PAGE_ROUTE, R.string.forum, R.drawable.ic_forum)
+    object Release : Screen(RELEASE_PAGE_ROUTE, R.string.release, R.drawable.ic_release)
+    object About : Screen(ABOUT_PAGE_ROUTE, R.string.about, R.drawable.ic_about)
 }
 
 val items = listOf(
@@ -165,13 +159,3 @@ val items = listOf(
     Screen.Release,
     Screen.About
 )
-
-enum class BottomNavCursor(
-    @StringRes val curName:Int,
-    @DrawableRes val curIcon:Int
-){
-    Home(R.string.home,R.drawable.ic_home),
-    Forum(R.string.forum, R.drawable.ic_forum),
-    Release(R.string.release, R.drawable.ic_release),
-    About(R.string.about, R.drawable.ic_about)
-}

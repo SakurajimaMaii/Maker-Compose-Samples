@@ -1,8 +1,7 @@
 package com.gcode.imaker.ui.fragment
 
-import android.content.Context
+import android.app.Activity
 import android.os.Build
-import android.view.Surface
 import androidx.annotation.RequiresApi
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.*
@@ -19,27 +18,29 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.gcode.imaker.R
-import com.gcode.imaker.ui.activity.items
 import com.gcode.imaker.ui.model.CommunicateItem
 import com.gcode.imaker.ui.model.communicates
 import com.gcode.imaker.ui.theme.XiangSuFamily
-import com.gcode.imaker.ui.theme.bkMain
 import com.gcode.imaker.ui.theme.releaseLayoutBk
 import com.gcode.imaker.utils.ApplicationUtils
 import com.gcode.tools.utils.MsgWindowUtils
 import com.google.accompanist.coil.rememberCoilPainter
+import androidx.core.content.ContextCompat.startActivity
+
+import android.content.Intent
+import android.net.Uri
+import androidx.core.content.ContextCompat
+
 
 @RequiresApi(Build.VERSION_CODES.R)
 @ExperimentalAnimationApi
 @Composable
-fun AboutFragment(navHostController: NavHostController) {
+fun AboutFragment(activity: Activity) {
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -52,7 +53,7 @@ fun AboutFragment(navHostController: NavHostController) {
             fontFamily = XiangSuFamily
         )
 
-        AuthorsCard(navHostController.context)
+        AuthorsCard(activity)
 
         Text(
             text = "联系方式",
@@ -76,7 +77,7 @@ fun AboutFragment(navHostController: NavHostController) {
 
 @RequiresApi(Build.VERSION_CODES.R)
 @Composable
-fun AuthorsCard(context: Context){
+fun AuthorsCard(activity: Activity){
     Card(
         shape = RoundedCornerShape(10.dp),
         modifier = Modifier.padding(20.dp, 10.dp)
@@ -86,9 +87,13 @@ fun AuthorsCard(context: Context){
                 .fillMaxWidth()
                 .height(IntrinsicSize.Min)
                 .clickable {
-                    MsgWindowUtils.showShortMsg(ApplicationUtils.context, "你点什么呢(●'◡'●)")
+                    val intent = Intent().apply {
+                        action = "android.intent.action.VIEW"
+                        data = Uri.parse("https://github.com/SakurajimaMaii")
+                    }
+                    activity.startActivity(intent)
                 }
-                .background(releaseLayoutBk(context))
+                .background(releaseLayoutBk(activity))
                 .padding(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ){
@@ -102,8 +107,12 @@ fun AuthorsCard(context: Context){
                     .clip(CircleShape)
                     .border(
                         shape = CircleShape,
-                        border = BorderStroke(4.dp, SolidColor(colorResource(id = R.color.light_blue)))
-                    ).border(
+                        border = BorderStroke(
+                            4.dp,
+                            SolidColor(colorResource(id = R.color.light_blue))
+                        )
+                    )
+                    .border(
                         shape = CircleShape,
                         border = BorderStroke(4.dp, SolidColor(Color.White))
                     )
