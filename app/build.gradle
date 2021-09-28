@@ -51,48 +51,26 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    //图表
-    implementation 'com.github.AAChartModel:AAChartCore-Kotlin:-SNAPSHOT'
+
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
-    implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.30"
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
-    annotationProcessor 'com.android.databinding:compiler:4.0.1'
     implementation 'androidx.annotation:annotation:1.2.0'
-    //天气
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     //支持ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.0-alpha03"
     //NavigationView
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'de.hdodenhof:circleimageview:3.1.0'
-    //自定标button
-    implementation 'com.github.SakurajimaMaii:ShapeButton:beta-2.0.0'
     //自定义工具类
     implementation 'com.github.SakurajimaMaii:ToolsForAndroid:2.2.1'
     //TransformationLayout
     implementation "com.github.skydoves:transformationlayout:1.0.8"
-    implementation "com.hedgehog.ratingbar:app:1.1.2"
-    // Testing Fragments in Isolation
-    debugImplementation "androidx.fragment:fragment-testing:1.3.6"
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-
-
     // Integration with activities
     implementation 'androidx.activity:activity-compose:1.3.1'
     // Compose Material Design
@@ -103,6 +81,8 @@ dependencies {
     implementation 'androidx.compose.ui:ui-tooling:1.0.2'
     // Integration with ViewModels
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:1.0.0-alpha07'
+    // observeAsState is part of the runtime-livedata dependency.
+    implementation "androidx.compose.runtime:runtime-livedata:1.0.2"
     // 相对约束布局
     implementation "androidx.constraintlayout:constraintlayout-compose:1.0.0-beta02"
     //导航组件
@@ -113,6 +93,12 @@ dependencies {
     implementation "com.google.accompanist:accompanist-insets:0.17.0"
     implementation "com.google.accompanist:accompanist-insets-ui:0.17.0"
     implementation "com.google.accompanist:accompanist-systemuicontroller:0.17.0"
+    kapt 'com.android.databinding:compiler:4.0.1'
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // Testing Fragments in Isolation
+    debugImplementation "androidx.fragment:fragment-testing:1.3.6"
+    testImplementation 'junit:junit:4.13.2'
 }

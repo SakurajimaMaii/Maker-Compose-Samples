@@ -1,8 +1,10 @@
 package com.gcode.imaker.ui.component
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Text
+import androidx.compose.material.TextFieldColors
 import androidx.compose.material.TextFieldDefaults.textFieldColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -13,8 +15,6 @@ import androidx.compose.ui.tooling.preview.Preview
  *作者:created by HP on 2021/9/7 19:37
  *邮箱:sakurajimamai2020@qq.com
  */
-
-val mainColor:Color = Color(0xFF0652DD)
 
 /**
  * 用户名输入栏
@@ -36,15 +36,15 @@ fun userNameOutlinedTextField():String{
                 }
                 else{
                     "你好,$userName!"
-                }
+                },
+                color = MaterialTheme.colors.onPrimary
             ) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 
@@ -64,14 +64,13 @@ fun passWordOutlinedTextField():String{
     OutlinedTextField(
         value = passWord,
         onValueChange = { passWord = it },
-        label = { Text("请输入密码") },
+        label = { Text("请输入密码",color = MaterialTheme.colors.onPrimary) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 
@@ -87,14 +86,13 @@ fun emailOutlinedTextField():String{
     OutlinedTextField(
         value = email,
         onValueChange = { email = it },
-        label = { Text("请输入邮箱") },
+        label = { Text("请输入邮箱",color = MaterialTheme.colors.onPrimary) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 
@@ -110,14 +108,13 @@ fun campusOutlinedTextField():String{
     OutlinedTextField(
         value = campus,
         onValueChange = { campus = it },
-        label = { Text("请输入校区") },
+        label = { Text("请输入校区",color = MaterialTheme.colors.onPrimary) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 
@@ -133,14 +130,13 @@ fun qqOutlinedTextField():String{
     OutlinedTextField(
         value = qq,
         onValueChange = { qq = it },
-        label = { Text("请输入qq号") },
+        label = { Text("请输入qq号",color = MaterialTheme.colors.onPrimary) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 
@@ -156,14 +152,13 @@ fun groupOutlinedTextField():String{
     OutlinedTextField(
         value = group,
         onValueChange = { group = it },
-        label = { Text("请输入密码") },
+        label = { Text("请输入组别",color = MaterialTheme.colors.onPrimary) },
         modifier = Modifier
             .fillMaxWidth()
             .height(IntrinsicSize.Min),
         colors = textFieldColors(
-            focusedIndicatorColor = mainColor,
-            focusedLabelColor = mainColor,
-            cursorColor = mainColor
+            focusedIndicatorColor = MaterialTheme.colors.secondary,
+            cursorColor = MaterialTheme.colors.secondary
         )
     )
 

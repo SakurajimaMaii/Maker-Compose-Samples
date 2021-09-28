@@ -5,6 +5,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -15,7 +16,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gcode.imaker.R
-import com.gcode.imaker.ui.theme.GradientProOne
+import com.gcode.imaker.ui.theme.LightBlue500
 
 /**
  *作者:created by HP on 2021/9/9 13:37
@@ -97,9 +98,9 @@ fun ForumTagTextItem(forumTag: ForumTag){
         fontSize = 30.sp,
         fontWeight = FontWeight.Bold,
         color = if(selected){
-            GradientProOne.color_3
+            LightBlue500
         }else{
-            Color(0xff353b48)
+            MaterialTheme.colors.onPrimary
         }
     )
 }

@@ -34,42 +34,45 @@ import androidx.core.content.ContextCompat.startActivity
 
 import android.content.Intent
 import android.net.Uri
+import androidx.compose.material.MaterialTheme
 import androidx.core.content.ContextCompat
+import com.gcode.imaker.ui.model.Communicate
+import com.gcode.imaker.ui.theme.MakerComposeTheme
 
 
 @RequiresApi(Build.VERSION_CODES.R)
 @ExperimentalAnimationApi
 @Composable
 fun AboutFragment(activity: Activity) {
-    Column(
-        modifier = Modifier.fillMaxSize()
-    ) {
-        Text(
-            text = "关于作者",
-            color = Color.Black,
-            fontWeight = FontWeight.Light,
-            fontSize = 30.sp,
-            modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 0.dp),
-            fontFamily = XiangSuFamily
-        )
+    MakerComposeTheme {
+        Column(
+            modifier = Modifier.fillMaxSize()
+        ) {
+            AboutPageTitle(title = "关于作者")
 
-        AuthorsCard(activity)
+            AuthorsCard(activity)
 
-        Text(
-            text = "联系方式",
-            color = Color.Black,
-            fontWeight = FontWeight.Light,
-            fontSize = 30.sp,
-            modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 0.dp),
-            fontFamily = XiangSuFamily
-        )
+            AboutPageTitle(title = "联系方式")
 
-        LazyColumn(
-            modifier = Modifier.padding(20.dp, 10.dp),
-            verticalArrangement = Arrangement.spacedBy(10.dp)
-        ){
-            items(communicates){ item->
-                CommunicateItem(communicate = item)
+            LazyColumn(
+                modifier = Modifier.padding(20.dp, 10.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ){
+                items(communicates){ item->
+                    CommunicateItem(communicate = item)
+                }
+            }
+
+            AboutPageTitle(title = "软件版本")
+
+            LazyColumn(modifier = Modifier.padding(20.dp, 10.dp)){
+                item {
+                    CommunicateItem(communicate = Communicate(
+                        R.drawable.ic_version,
+                        "version",
+                        "alpha-1.0.0"
+                    ))
+                }
             }
         }
     }
@@ -133,4 +136,15 @@ fun AuthorsCard(activity: Activity){
             }
         }
     }
+}
+
+@Composable
+fun AboutPageTitle(title: String){
+    Text(
+        text = title,
+        color = MaterialTheme.colors.onPrimary,
+        fontWeight = FontWeight.Bold,
+        fontSize = 20.sp,
+        modifier = Modifier.padding(20.dp, 10.dp, 0.dp, 0.dp),
+    )
 }

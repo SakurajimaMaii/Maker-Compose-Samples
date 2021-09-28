@@ -1,17 +1,16 @@
 package com.gcode.imaker.ui.model
 
-import android.text.Layout
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
-import androidx.compose.material.SnackbarDefaults.backgroundColor
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -25,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gcode.imaker.R
-import com.gcode.imaker.ui.theme.GradientProOne
+import com.gcode.imaker.ui.theme.LightBlue500
 
 /**
  *作者:created by HP on 2021/5/22 06:42
@@ -92,13 +91,13 @@ val findNotices = listOf(
  */
 @Composable
 fun FindNoticeItem(findNotice: FindNotice){
-    Card(modifier = Modifier.fillMaxWidth().alpha(0.9f),backgroundColor = GradientProOne.color_1,shape = RoundedCornerShape(20.dp)) {
+    Card(modifier = Modifier.fillMaxWidth().alpha(0.9f),backgroundColor = LightBlue500,shape = RoundedCornerShape(20.dp)) {
         Column(modifier = Modifier
             .fillMaxWidth()
             .padding(10.dp, 5.dp)){
-            Text(text = findNotice.name,fontSize = 30.sp,fontWeight = FontWeight.Bold)
+            Text(text = findNotice.name,fontSize = 30.sp,fontWeight = FontWeight.Bold,color = MaterialTheme.colors.onPrimary)
 
-            Text(text = findNotice.description, fontSize = 15.sp)
+            Text(text = findNotice.description, fontSize = 15.sp,color = MaterialTheme.colors.onPrimary)
 
             Image(
                 painter = painterResource(id = findNotice.image),
@@ -115,7 +114,8 @@ fun FindNoticeItem(findNotice: FindNotice){
                     Card(
                         shape = RoundedCornerShape(5.dp),
                         modifier = Modifier.height(30.dp).width(80.dp),
-                        border = BorderStroke(width = 2.dp,color = colorResource(id = R.color.util_light_sea_blue))) {
+                        border = BorderStroke(width = 2.dp,color = colorResource(id = R.color.util_light_sea_blue)),
+                        backgroundColor = Color.White) {
                         Text(
                             text = item,
                             fontSize = 15.sp,
@@ -135,7 +135,7 @@ fun FindNoticeItem(findNotice: FindNotice){
                 Icon(painter = painterResource(R.drawable.ic_time), contentDescription = null)
                 Text(text = "2021-${(0..9).random()}-${(0..30).random()}",modifier = Modifier.padding(5.dp))
                 Icon(painter = painterResource(R.drawable.ic_phone), contentDescription = null)
-                Text(text = "${(10000000000..20000000000).random()}",modifier = Modifier.padding(5.dp))
+                Text(text = "${(1000000000..2000000000).random()}",modifier = Modifier.padding(5.dp))
             }
         }
     }

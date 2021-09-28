@@ -6,6 +6,7 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -72,17 +73,15 @@ fun CommunicateItem(communicate: Communicate){
             Text(
                 text = communicate.communicateName,
                 fontWeight = FontWeight.Bold,
-                fontSize = 20.sp
+                fontSize = 20.sp,
+                color = MaterialTheme.colors.onPrimary
             )
 
-            AnimatedVisibility(visible = clickEvent) {
-                Text(
-                    text = communicate.communicateContent,
-                    modifier = Modifier
-                        .wrapContentWidth(Alignment.End)
-                        .weight(1f)
-                )
-            }
+            Text(
+                text = communicate.communicateContent,
+                fontSize = 10.sp,
+                color = MaterialTheme.colors.onPrimary
+            )
         }
     }
 }

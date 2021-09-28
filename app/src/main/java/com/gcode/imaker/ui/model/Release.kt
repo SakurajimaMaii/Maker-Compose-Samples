@@ -10,6 +10,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -105,7 +106,8 @@ fun ReleaseItem(index:Int, release: Release, activity: Activity, clickEvent: () 
                             top.linkTo(parent.top)
                             absoluteLeft.linkTo(parent.absoluteLeft)
                         },
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colors.onPrimary
                     )
                     Text(
                         text = "了解更多",
@@ -115,7 +117,8 @@ fun ReleaseItem(index:Int, release: Release, activity: Activity, clickEvent: () 
                             bottom.linkTo(parent.bottom)
                             absoluteLeft.linkTo(parent.absoluteLeft)
                         },
-                        fontWeight = FontWeight.Bold
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colors.onPrimary
                     )
                     Image(
                         painter = painterResource(id = R.drawable.ic_link),
