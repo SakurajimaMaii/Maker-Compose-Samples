@@ -1,4 +1,28 @@
-<vector android:height="40dp" android:viewportHeight="1024"
-    android:viewportWidth="1024" android:width="40dp" xmlns:android="http://schemas.android.com/apk/res/android">
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2021 码上夏雨
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
+<vector android:height="30dp" android:viewportHeight="1024"
+    android:viewportWidth="1024" android:width="30dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#55ACEE" android:pathData="M1024,186.37a410.33,410.33 0,0 1,-120.62 33.88,214.95 214.95,0 0,0 92.37,-119.13 413.78,413.78 0,0 1,-133.5 52.18A207.19,207.19 0,0 0,708.95 85.33c-115.97,0 -210.01,96.43 -210.01,215.42 0,16.9 1.79,33.28 5.38,49.07 -174.59,-9 -329.39,-94.72 -433.07,-225.15a219.31,219.31 0,0 0,-28.42 108.37c0,74.71 37.12,140.67 93.44,179.33a206.25,206.25 0,0 1,-95.15 -26.88v2.65c0,104.41 72.41,191.49 168.53,211.2a200.32,200.32 0,0 1,-55.3 7.59c-13.53,0 -26.75,-1.28 -39.55,-3.84 26.71,85.59 104.28,147.88 196.22,149.55A414.81,414.81 0,0 1,0 841.94,584.96 584.96,0 0,0 322.05,938.67c386.47,0 597.76,-328.19 597.76,-612.91 0,-9.39 -0.21,-18.73 -0.55,-27.9 41.05,-30.38 76.67,-68.27 104.75,-111.49"/>
 </vector>

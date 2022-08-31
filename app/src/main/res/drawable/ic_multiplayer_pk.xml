@@ -1,3 +1,27 @@
+<!--
+  ~ MIT License
+  ~
+  ~ Copyright (c) 2021 码上夏雨
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy
+  ~ of this software and associated documentation files (the "Software"), to deal
+  ~ in the Software without restriction, including without limitation the rights
+  ~ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  ~ copies of the Software, and to permit persons to whom the Software is
+  ~ furnished to do so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  -->
+
 <vector android:height="50dp" android:viewportHeight="1024"
     android:viewportWidth="1024" android:width="50dp" xmlns:android="http://schemas.android.com/apk/res/android">
     <path android:fillColor="#FF7245" android:pathData="M515.79,1024c-1.47,-0.29 -2.93,-0.73 -4.32,-0.88a31.78,31.78 0,0 0,-3.57 0.88h7.9zM513.33,0h-2.93L50.71,125.27v377.43c0,328.49 248.07,478.81 460.81,520.42 223.11,-53.04 461.53,-211.13 461.53,-520.42L973.04,125.27zM886.13,502.7c0,262.41 -201.96,381.53 -376.38,431.05 -172.68,-42.34 -372.15,-156.92 -372.15,-431.05L137.59,192.67l374.29,-103.44 374.27,103.44v310.03zM242.53,593.83l51.19,-322.19h162.16a347.64,347.64 0,0 1,35.03 2.2,98.56 98.56,0 0,1 37.92,12.45 60.17,60.17 0,0 1,26.86 34.72,114.15 114.15,0 0,1 3.93,51.72 151.79,151.79 0,0 1,-14.77 49.67,102.91 102.91,0 0,1 -33.35,39.41 111.56,111.56 0,0 1,-38.26 16.56,260.34 260.34,0 0,1 -49.23,3.81h-86.52l-17.99,112.08zM439.72,410.98a43.19,43.19 0,0 0,20.69 -3.96,32.67 32.67,0 0,0 12.23,-14.07 67.57,67.57 0,0 0,7.15 -19.34,34.09 34.09,0 0,0 -2.08,-18.9 17.86,17.86 0,0 0,-8 -9.82,31.97 31.97,0 0,0 -12.1,-2.93L360.37,341.97l-11.28,69.01h90.63zM686.18,710.46l-61.32,-102.71 -50.91,44.83 -11.28,58.31h-76.72l54.5,-279.55h76.72l-21.67,106.66 115.86,-106.81 98.56,0.15 -131.86,126.15 93.62,152.52z"/>
